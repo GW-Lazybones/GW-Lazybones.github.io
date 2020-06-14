@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="广外编程社" />
+   
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    Python如何脱单（三） |  广外编程社官网
+  </title>
+  <meta name="generator" content="hexo-theme-yilia-plus">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="广外编程社官网" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-Python如何脱单（三）" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Python如何脱单（三）
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/06/13/Python%E5%A6%82%E4%BD%95%E8%84%B1%E5%8D%95%EF%BC%88%E4%B8%89%EF%BC%89/" class="article-date">
+  <time datetime="2020-06-13T10:54:28.000Z" itemprop="datePublished">2020-06-13</time>
+</a>
+      
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.2k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">4分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <p> 用 Python 制作的给父母天气预报提醒的小工具<a href="https://mp.weixin.qq.com/s/GrWQN6-gK49L8l0u37Tr7g" target="_blank" rel="noopener">天气变冷了，给父母制作一个天气提醒小助手</a>，这篇文章我同步到博客上之后，有读者在评论区留言，对于部分微信没有网页版接口，导致无法实现这个功能，这位读者建议，建议用发短信的方式，这样，就不会受限于微信的限制。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1229977/201911/1229977-20191104092934144-479241373.png" alt="img"></p>
+<p>这是一个好方法，今天的教程就是教大家怎么发送免费短信给女朋友。</p>
+<p>发送短信接口，我知道的常见的有两个平台，一个是 twilio，可以免费发短信 500 条，可发任意信息，一个是腾讯云，可以免费发短信 100 条，需要申请短信发送内容模板。</p>
+<p>鉴于 twilio 免费次数多一些，所以，这次我们就 twilio来发送当天的天气信息给爸妈了。</p>
+<h2 id="twilio注册"><a href="#twilio注册" class="headerlink" title="twilio注册"></a>twilio注册</h2><p>要发送短信，我们需要现在 twilio 官网注册一个账号。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.twilio.com&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>点击 Sign Up 注册一个账号。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1229977/201911/1229977-20191104092934627-158366549.png" alt="img"></p>
+<p>填写邮箱和密码等资料，提交后会有一个判断是否为机器人的验证，点击左右箭头使图案显示为正图就可以了。</p>
+<p>再到刚才填写的邮箱中去验证下，需要填入手机号验证。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1229977/201911/1229977-20191104092934900-495766124.png" alt="img"></p>
+<p>刚开始用了移动号发了两次都没有收到验证码，不知道什么原因，之后换了电信后就收到了验证码。</p>
+<p>验证成功后会提示选择是否通过代码调用。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1229977/201911/1229977-20191104092935164-1675521922.png" alt="img"></p>
+<p>选择 yes 后再选择对应的语言，我们当然是选择 Python 了。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1229977/201911/1229977-20191104092935397-521182981.png" alt="img"></p>
+<h2 id="获取试用号"><a href="#获取试用号" class="headerlink" title="获取试用号"></a>获取试用号</h2><p>选择使用用途后，可以就可以获取一个试用的号码了，点击 Get a Trial Number 按钮。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1229977/201911/1229977-20191104092936849-343851043.jpg" alt="img"></p>
+<p>我们可以看到系统给我提供的这个号码。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1229977/201911/1229977-20191104092938940-2049808357.png" alt="img"></p>
+<p>点击确定后就会出现成功的页面，显示 Twilio 提供的号码，这个号码就是用来发送短信的。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1229977/201911/1229977-20191104092940255-380574474.png" alt="img"></p>
+<p>获取号码成功后自动跳回到主页，下方有 Python 调用短信接口的示例。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1229977/201911/1229977-20191104092941497-621131960.png" alt="img"></p>
+<p>进入接口调用说明后，我们看到右边直接由 Python 调用接口发短信的示例。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1229977/201911/1229977-20191104092943670-1408192322.png" alt="img"></p>
+<p>我们直接拿来用即可，把代码中 account_sid 和 auth_token 替换成自己的，这个两个值在刚才显示号码那个页面。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1229977/201911/1229977-20191104092944969-887141862.png" alt="img"></p>
+<p>再把 message 中的 body 换成你自己的文本，把发送信息的号码换成刚官方提供的号码。</p>
+<h2 id="接收号验证"><a href="#接收号验证" class="headerlink" title="接收号验证"></a>接收号验证</h2><p>接收号码在使用前，需要在 Twilio 上验证下，点击右侧的 verified numbers 进入，添加号码。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1229977/201911/1229977-20191104092945492-369628442.png" alt="img"></p>
+<p>因为这是免费版，所以只支持一个号码，如果之前有验证号码的话，我们需要点击右侧的 X 把这个号码号码删除才能添加新的号码。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1229977/201911/1229977-20191104092946052-463940193.png" alt="img"></p>
+<p>点击验证号码的按钮后，在弹出的页面选择左下方的 text you instead，也就是用短信验证码来验证新添加的号码，你要发给女朋友，当然，这个接收的号码都填女朋友的了。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1229977/201911/1229977-20191104092947015-693148001.png" alt="img"></p>
+<p>填入号码后，点击验证，等待验证码。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1229977/201911/1229977-20191104092947533-22826922.png" alt="img"></p>
+<p>我分别试了移动号、联通号、电信号，发现电信号和联通卡能正常收到验证码通过验证，移动号发了几次都收不到验证码，卡里是有余额的，可能是移动卡不支持这个接口，大家可以试试。</p>
+<h2 id="代码调试"><a href="#代码调试" class="headerlink" title="代码调试"></a>代码调试</h2><p>运行代码前，不要忘了把 twilio 库用 pip 命令安装下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install twilio</span><br></pre></td></tr></table></figure>
+
+<p>然后把代码中的几个值替换成自己的。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1229977/201911/1229977-20191104092949694-647622674.png" alt="img"></p>
+<p>把刚才验证成功的号添加到代码中，运行代码，成功后就会收到发送的短信。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1229977/201911/1229977-20191104092951954-397835924.png" alt="img"></p>
+<p>然后我们把之前的天气信息用短信发出去，当然你可以发送其他信息。这里我用之前的天气信息。</p>
+<p>之前的代码中把微信相关的去掉，天气接口部分保留。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1229977/201911/1229977-20191104092952874-582747103.png" alt="img"></p>
+<p>把其中的 key 换成自己的，具体操作详见这篇文章<a href="https://mp.weixin.qq.com/s/GrWQN6-gK49L8l0u37Tr7g" target="_blank" rel="noopener">天气变冷了，给父母制作一个天气提醒小助手</a>。</p>
+<p>把刚才发送短信的内容替换成天气接口返回的信息 msg，定时操作的代码和之前一样。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1229977/201911/1229977-20191104092956985-1819179876.png" alt="img"></p>
+<p>运行代码后的效果如下：<br><img src="https://img2018.cnblogs.com/blog/1229977/201911/1229977-20191104093000037-2038518608.png" alt="img"></p>
+<p>同样，我还是把程序放在服务器上，第二天同一时间会继续发送当天的天气信息，我设置的是相隔 24 小时，当然，你可以改变相隔时间。</p>
+<p>没有服务器的小伙伴可以看看腾讯云的双十一活动价了，88元一年，平时用来放放小工具，做个人网站是非常划算的。</p>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/06/13/Python%E5%A6%82%E4%BD%95%E8%84%B1%E5%8D%95%EF%BC%88%E4%B8%89%EF%BC%89/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2020/06/13/Python%E5%A6%82%E4%BD%95%E8%84%B1%E5%8D%95%EF%BC%88%E5%9B%9B%EF%BC%89/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Python如何脱单（四）
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/06/13/Python%E5%A6%82%E4%BD%95%E8%84%B1%E5%8D%95%EF%BC%88%E4%BA%8C%EF%BC%89/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Python如何脱单（二）</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: '9KjOP8UIrxMNeout6rbPNABM-gzGzoHsz',
+        app_key: 'p8jYOMTugImVVUXFa52wB63J',
+        path: window.location.pathname,
+        notify: 'true',
+        verify: 'true',
+        avatar: 'mp',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+
+
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2020
+        广外编程社
+      </li>
+      <li>
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <span>
+  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
+  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
+</span>
+        
+      </li>
+      
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://v1.cnzz.com/z_stat.php?id=1278929797&amp;web_id=1278929797'></script>
+        
+      </li>
+    </ul>
+  </div>
+
+
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv" style='display:none'>
+                本站访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+</footer>
+
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("08/4/2020 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+      <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    <aside class="sidebar">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/logo.png" alt="广外编程社官网"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="https://gw-lazybones.github.io/2020/05/30/%EF%BC%88%E7%BD%AE%E9%A1%B6%EF%BC%89GZFLS%20LazyBones%20%E7%AE%80%E4%BB%8B" target="_blank" rel="noopener">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>就当交个团费吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+      strings: ['广外编程社官网', '提供Python，C++；hexo等资料', '提供Python，C++；hexo等资料'],
+      startDelay: 0,
+      typeSpeed: 200,
+      loop: true,
+      backSpeed: 100,
+      showCursor: true
+    });
+  } catch (err) {
+  }
+
+</script>
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    onClick: (e) => {
+      $('.toc-link').removeClass('is-active-link');
+      $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+      $(e.target.hash).scrollIntoView();
+      return false;
+    }
+  });
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/js/ayer.js"></script>
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true
+  }
+</script>
+
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="86"
+        src="//music.163.com/outchain/player?type=2&id=22707008&auto=1&height=66"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
+
+<!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/love.js"></script>
+
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='1.4' zIndex="-4" count="185" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+<!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+

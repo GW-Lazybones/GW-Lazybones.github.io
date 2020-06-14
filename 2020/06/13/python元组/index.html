@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="广外编程社" />
+   
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    python元组 |  广外编程社官网
+  </title>
+  <meta name="generator" content="hexo-theme-yilia-plus">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="广外编程社官网" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-python元组" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  python元组
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/06/13/python%E5%85%83%E7%BB%84/" class="article-date">
+  <time datetime="2020-06-13T09:53:50.000Z" itemprop="datePublished">2020-06-13</time>
+</a>
+      
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">2k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">9分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <h3 id="Python的元组与列表类似，不同之处在于元组的元素不能修改-元组使用小括号"><a href="#Python的元组与列表类似，不同之处在于元组的元素不能修改-元组使用小括号" class="headerlink" title="Python的元组与列表类似，不同之处在于元组的元素不能修改,元组使用小括号,"></a>Python的元组与列表类似，不同之处在于元组的元素不能修改,元组使用小括号,</h3><h3 id="列表使用方括号-元组创建很简单-只需要在括号中添加元素-并使用逗号隔开即可"><a href="#列表使用方括号-元组创建很简单-只需要在括号中添加元素-并使用逗号隔开即可" class="headerlink" title="列表使用方括号,元组创建很简单,只需要在括号中添加元素,并使用逗号隔开即可"></a>列表使用方括号,元组创建很简单,只需要在括号中添加元素,并使用逗号隔开即可</h3><p>*<em>一、创建元组<br>*</em></p>
+<p>代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tup1 &#96;&#96;&#x3D;&#96; &#96;(&#96;&#96;&#39;physics&#39;&#96;&#96;, &#96;&#96;&#39;chemistry&#39;&#96;&#96;, &#96;&#96;1997&#96;&#96;, &#96;&#96;2000&#96;&#96;);&#96;&#96;tup2 &#96;&#96;&#x3D;&#96; &#96;(&#96;&#96;1&#96;&#96;, &#96;&#96;2&#96;&#96;, &#96;&#96;3&#96;&#96;, &#96;&#96;4&#96;&#96;, &#96;&#96;5&#96; &#96;);&#96;&#96;tup3 &#96;&#96;&#x3D;&#96; &#96;&quot;a&quot;&#96;&#96;, &#96;&#96;&quot;b&quot;&#96;&#96;, &#96;&#96;&quot;c&quot;&#96;&#96;, &#96;&#96;&quot;d&quot;&#96;&#96;;</span><br></pre></td></tr></table></figure>
+
+<p>创建空元组</p>
+<p>代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tup1 &#96;&#96;&#x3D;&#96; &#96;();</span><br></pre></td></tr></table></figure>
+
+<p>元组中只包含一个元素时，需要在元素后面添加逗号来消除歧义</p>
+<p>代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tup1 &#96;&#96;&#x3D;&#96; &#96;(&#96;&#96;50&#96;&#96;,);</span><br></pre></td></tr></table></figure>
+
+<p>元组与字符串类似，下标索引从0开始，可以进行截取，组合等。<br><strong>二、访问元组</strong><br>元组可以使用下标索引来访问元组中的值，如下实例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">代码如下:&#96;&#96;#!&#x2F;usr&#x2F;bin&#x2F;python&#96;&#96; &#96; &#96;tup1 &#96;&#96;&#x3D;&#96; &#96;(&#96;&#96;&#39;physics&#39;&#96;&#96;, &#96;&#96;&#39;chemistry&#39;&#96;&#96;, &#96;&#96;1997&#96;&#96;, &#96;&#96;2000&#96;&#96;);&#96;&#96;tup2 &#96;&#96;&#x3D;&#96; &#96;(&#96;&#96;1&#96;&#96;, &#96;&#96;2&#96;&#96;, &#96;&#96;3&#96;&#96;, &#96;&#96;4&#96;&#96;, &#96;&#96;5&#96;&#96;, &#96;&#96;6&#96;&#96;, &#96;&#96;7&#96; &#96;);&#96; &#96;print&#96; &#96;&quot;tup1[0]: &quot;&#96;&#96;, tup1[&#96;&#96;0&#96;&#96;]&#96;&#96;print&#96; &#96;&quot;tup2[1:5]: &quot;&#96;&#96;, tup2[&#96;&#96;1&#96;&#96;:&#96;&#96;5&#96;&#96;]&#96;&#96;#以上实例输出结果：&#96;&#96;#tup1[0]: physics&#96;&#96;#tup2[1:5]: [2, 3, 4, 5]</span><br></pre></td></tr></table></figure>
+
+<p><strong>三、修改元组</strong><br>元组中的元素值是不允许修改的，但我们可以对元组进行连接组合，如下实例:</p>
+<p>代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;python&#96;&#96; &#96; &#96;tup1 &#96;&#96;&#x3D;&#96; &#96;(&#96;&#96;12&#96;&#96;, &#96;&#96;34.56&#96;&#96;);&#96;&#96;tup2 &#96;&#96;&#x3D;&#96; &#96;(&#96;&#96;&#39;abc&#39;&#96;&#96;, &#96;&#96;&#39;xyz&#39;&#96;&#96;);&#96; &#96;# 以下修改元组元素操作是非法的。&#96;&#96;# tup1[0] &#x3D; 100;&#96; &#96;# 创建一个新的元组&#96;&#96;tup3 &#96;&#96;&#x3D;&#96; &#96;tup1 &#96;&#96;+&#96; &#96;tup2;&#96;&#96;print&#96; &#96;tup3;&#96;&#96;#以上实例输出结果：&#96;&#96;#(12, 34.56, &#39;abc&#39;, &#39;xyz&#39;)</span><br></pre></td></tr></table></figure>
+
+<p>*<em>四、删除元组<br>*</em>元组中的元素值是不允许删除的，但我们可以使用del语句来删除整个元组，如下实例:</p>
+<p>代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;python&#96;&#96; &#96; &#96;tup &#96;&#96;&#x3D;&#96; &#96;(&#96;&#96;&#39;physics&#39;&#96;&#96;, &#96;&#96;&#39;chemistry&#39;&#96;&#96;, &#96;&#96;1997&#96;&#96;, &#96;&#96;2000&#96;&#96;);&#96; &#96;print&#96; &#96;tup;&#96;&#96;del&#96; &#96;tup;&#96;&#96;print&#96; &#96;&quot;After deleting tup : &quot;&#96;&#96;print&#96; &#96;tup;&#96; &#96;#以上实例元组被删除后，输出变量会有异常信息，输出如下所示：&#96;&#96;#(&#39;physics&#39;, &#39;chemistry&#39;, 1997, 2000)&#96;&#96;#After deleting tup :&#96;&#96;#Traceback (most recent call last):&#96;&#96;# File &quot;test.py&quot;, line 9, in &lt;module&gt;&#96;&#96;#  print tup;&#96;&#96;#NameError: name &#39;tup&#39; is not defined[&#x2F;code]</span><br></pre></td></tr></table></figure>
+
+<p><strong>五、元组运算符</strong><br>与字符串一样，元组之间可以使用 + 号和 * 号进行运算。这就意味着他们可以组合和复制，运算后会生成一个新的元组。</p>
+<p><strong>六、元组索引，截取</strong><br>因为元组也是一个序列，所以我们可以访问元组中的指定位置的元素，也可以截取索引中的一段元素，如下所示：<br>元组：</p>
+<p>代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">L &#96;&#96;&#x3D;&#96; &#96;(&#96;&#96;&#39;spam&#39;&#96;&#96;, &#96;&#96;&#39;Spam&#39;&#96;&#96;, &#96;&#96;&#39;SPAM!&#39;&#96;&#96;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>七、无关闭分隔符</strong><br>任意无符号的对象，以逗号隔开，默认为元组，如下实例：</p>
+<p>代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;python&#96;&#96; &#96; &#96;print&#96; &#96;&#39;abc&#39;&#96;&#96;, &#96;&#96;-&#96;&#96;4.24e93&#96;&#96;, &#96;&#96;18&#96;&#96;+&#96;&#96;6.6j&#96;&#96;, &#96;&#96;&#39;xyz&#39;&#96;&#96;;&#96;&#96;x, y &#96;&#96;&#x3D;&#96; &#96;1&#96;&#96;, &#96;&#96;2&#96;&#96;;&#96;&#96;print&#96; &#96;&quot;Value of x , y : &quot;&#96;&#96;, x,y;</span><br></pre></td></tr></table></figure>
+
+<p>以上实例允许结果：</p>
+<p>代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abc &#96;&#96;-&#96;&#96;4.24e&#96;&#96;+&#96;&#96;93&#96; &#96;(&#96;&#96;18&#96;&#96;+&#96;&#96;6.6j&#96;&#96;) xyz&#96;&#96;Value of x , y : &#96;&#96;1&#96; &#96;2</span><br></pre></td></tr></table></figure>
+
+<p><strong>八、元组内置函数</strong><br>Python元组包含了以下内置函数<br>1、cmp(tuple1, tuple2)：比较两个元组元素。<br>2、len(tuple)：计算元组元素个数。<br>3、max(tuple)：返回元组中元素最大值。<br>4、min(tuple)：返回元组中元素最小值。<br>5、tuple(seq)：将列表转换为元组。</p>
+<p><strong>九、另一种解读</strong></p>
+<p>tuple和list非常类似，但是tuple一旦初始化就不能修改，比如同样是列出同学的名字：</p>
+<p>代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; classmates &#96;&#96;&#x3D;&#96; &#96;(&#96;&#96;&#39;Michael&#39;&#96;&#96;, &#96;&#96;&#39;Bob&#39;&#96;&#96;, &#96;&#96;&#39;Tracy&#39;&#96;&#96;)</span><br></pre></td></tr></table></figure>
+
+<p>现在，classmates这个tuple不能变了，它也没有append()，insert()这样的方法。其他获取元素的方法和list是一样的，你可以正常地使用classmates[0]，classmates[-1]，但不能赋值成另外的元素。<br>不可变的tuple有什么意义？因为tuple不可变，所以代码更安全。如果可能，能用tuple代替list就尽量用tuple。<br>tuple的陷阱：当你定义一个tuple时，在定义的时候，tuple的元素就必须被确定下来，比如：</p>
+<p>代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; t &#96;&#96;&#x3D;&#96; &#96;(&#96;&#96;1&#96;&#96;, &#96;&#96;2&#96;&#96;)&#96;&#96;&gt;&gt;&gt; t&#96;&#96;(&#96;&#96;1&#96;&#96;, &#96;&#96;2&#96;&#96;)</span><br></pre></td></tr></table></figure>
+
+<p>如果要定义一个空的tuple，可以写成()：</p>
+<p>代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; t &#96;&#96;&#x3D;&#96; &#96;()&#96;&#96;&gt;&gt;&gt; t&#96;&#96;()</span><br></pre></td></tr></table></figure>
+
+<p>但是，要定义一个只有1个元素的tuple，如果你这么定义：</p>
+<p>代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; t &#96;&#96;&#x3D;&#96; &#96;(&#96;&#96;1&#96;&#96;)&#96;&#96;&gt;&gt;&gt; t&#96;&#96;1</span><br></pre></td></tr></table></figure>
+
+<p>定义的不是tuple，是1这个数！这是因为括号()既可以表示tuple，又可以表示数学公式中的小括号，这就产生了歧义，因此，Python规定，这种情况下，按小括号进行计算，计算结果自然是1。<br>所以，只有1个元素的tuple定义时必须加一个逗号,，来消除歧义：</p>
+<p>代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; t &#96;&#96;&#x3D;&#96; &#96;(&#96;&#96;1&#96;&#96;,)&#96;&#96;&gt;&gt;&gt; t&#96;&#96;(&#96;&#96;1&#96;&#96;,)</span><br></pre></td></tr></table></figure>
+
+<p>Python在显示只有1个元素的tuple时，也会加一个逗号,，以免你误解成数学计算意义上的括号。</p>
+<p>在来看一个“可变的”tuple：</p>
+<p>代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; t &#96;&#96;&#x3D;&#96; &#96;(&#96;&#96;&#39;a&#39;&#96;&#96;, &#96;&#96;&#39;b&#39;&#96;&#96;, [&#96;&#96;&#39;A&#39;&#96;&#96;, &#96;&#96;&#39;B&#39;&#96;&#96;])&#96;&#96;&gt;&gt;&gt; t[&#96;&#96;2&#96;&#96;][&#96;&#96;0&#96;&#96;] &#96;&#96;&#x3D;&#96; &#96;&#39;X&#39;&#96;&#96;&gt;&gt;&gt; t[&#96;&#96;2&#96;&#96;][&#96;&#96;1&#96;&#96;] &#96;&#96;&#x3D;&#96; &#96;&#39;Y&#39;&#96;&#96;&gt;&gt;&gt; t&#96;&#96;(&#96;&#96;&#39;a&#39;&#96;&#96;, &#96;&#96;&#39;b&#39;&#96;&#96;, [&#96;&#96;&#39;X&#39;&#96;&#96;, &#96;&#96;&#39;Y&#39;&#96;&#96;])</span><br></pre></td></tr></table></figure>
+
+<p>这个tuple定义的时候有3个元素，分别是’a’，’b’和一个list。不是说tuple一旦定义后就不可变了吗？怎么后来又变了？</p>
+<p>别急，我们先看看定义的时候tuple包含的3个元素：<br><img src="https://files.jb51.net/file_images/article/201403/2014031116262410.png" alt="tuple-0"><br>当我们把list的元素’A’和’B’修改为’X’和’Y’后，tuple变为：<br><img src="https://files.jb51.net/file_images/article/201403/2014031116262411.png" alt="tuple-1"><br>表面上看，tuple的元素确实变了，但其实变的不是tuple的元素，而是list的元素。tuple一开始指向的list并没有改成别的list，所以，tuple所谓的“不变”是说，tuple的每个元素，指向永远不变。即指向’a’，就不能改成指向’b’，指向一个list，就不能改成指向其他对象，但指向的这个list本身是可变的！<br>理解了“指向不变”后，要创建一个内容也不变的tuple怎么做？那就必须保证tuple的每一个元素本身也不能变。</p>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/06/13/python%E5%85%83%E7%BB%84/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2020/06/13/python%E5%AD%97%E5%85%B8/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            python字典
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/06/13/python%E5%88%97%E8%A1%A8/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">python列表</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: '9KjOP8UIrxMNeout6rbPNABM-gzGzoHsz',
+        app_key: 'p8jYOMTugImVVUXFa52wB63J',
+        path: window.location.pathname,
+        notify: 'true',
+        verify: 'true',
+        avatar: 'mp',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+
+
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2020
+        广外编程社
+      </li>
+      <li>
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <span>
+  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
+  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
+</span>
+        
+      </li>
+      
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://v1.cnzz.com/z_stat.php?id=1278929797&amp;web_id=1278929797'></script>
+        
+      </li>
+    </ul>
+  </div>
+
+
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv" style='display:none'>
+                本站访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+</footer>
+
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("08/4/2020 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+      <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    <aside class="sidebar">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/logo.png" alt="广外编程社官网"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="https://gw-lazybones.github.io/2020/05/30/%EF%BC%88%E7%BD%AE%E9%A1%B6%EF%BC%89GZFLS%20LazyBones%20%E7%AE%80%E4%BB%8B" target="_blank" rel="noopener">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>就当交个团费吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+      strings: ['广外编程社官网', '提供Python，C++；hexo等资料', '提供Python，C++；hexo等资料'],
+      startDelay: 0,
+      typeSpeed: 200,
+      loop: true,
+      backSpeed: 100,
+      showCursor: true
+    });
+  } catch (err) {
+  }
+
+</script>
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    onClick: (e) => {
+      $('.toc-link').removeClass('is-active-link');
+      $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+      $(e.target.hash).scrollIntoView();
+      return false;
+    }
+  });
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/js/ayer.js"></script>
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true
+  }
+</script>
+
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="86"
+        src="//music.163.com/outchain/player?type=2&id=22707008&auto=1&height=66"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
+
+<!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/love.js"></script>
+
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='1.4' zIndex="-4" count="185" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+<!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+

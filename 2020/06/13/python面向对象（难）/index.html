@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="广外编程社" />
+   
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    python面向对象（难） |  广外编程社官网
+  </title>
+  <meta name="generator" content="hexo-theme-yilia-plus">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="广外编程社官网" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-python面向对象（难）" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  python面向对象（难）
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/06/13/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%88%E9%9A%BE%EF%BC%89/" class="article-date">
+  <time datetime="2020-06-13T10:19:11.000Z" itemprop="datePublished">2020-06-13</time>
+</a>
+      
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">14.4k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">54分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <p> 阅读目录</p>
+<ul>
+<li><a href="http://www.cnblogs.com/Eva-J/articles/7293890.html#_label1" target="_blank" rel="noopener">楔子</a></li>
+<li><a href="http://www.cnblogs.com/Eva-J/articles/7293890.html#_label2" target="_blank" rel="noopener">面向过程vs面向对象</a></li>
+<li>初识面向对象<ul>
+<li><a href="http://www.cnblogs.com/Eva-J/articles/7293890.html#_label4" target="_blank" rel="noopener">　　类的相关知识</a></li>
+<li><a href="http://www.cnblogs.com/Eva-J/articles/7293890.html#_label5" target="_blank" rel="noopener">　　对象的相关知识</a></li>
+<li><a href="http://www.cnblogs.com/Eva-J/articles/7293890.html#_label6" target="_blank" rel="noopener">　　对象之间的交互</a></li>
+<li><a href="http://www.cnblogs.com/Eva-J/articles/7293890.html#_label7" target="_blank" rel="noopener">　　类命名空间与对象、实例的命名空间</a></li>
+<li><a href="http://www.cnblogs.com/Eva-J/articles/7293890.html#_label18" target="_blank" rel="noopener">　　类的组合用法</a></li>
+<li><a href="http://www.cnblogs.com/Eva-J/articles/7293890.html#_label8" target="_blank" rel="noopener">　　初识面向对象小结</a></li>
+</ul>
+</li>
+<li>面向对象的三大特性<ul>
+<li><a href="http://www.cnblogs.com/Eva-J/articles/7293890.html#_label10" target="_blank" rel="noopener">　　继承</a></li>
+<li><a href="http://www.cnblogs.com/Eva-J/articles/7293890.html#_label11" target="_blank" rel="noopener">　　多态</a></li>
+<li><a href="http://www.cnblogs.com/Eva-J/articles/7293890.html#_label12" target="_blank" rel="noopener">　　封装</a></li>
+</ul>
+</li>
+<li>面向对象的更多说明<ul>
+<li><a href="http://www.cnblogs.com/Eva-J/articles/7293890.html#_label15" target="_blank" rel="noopener">　　面向对象的软件开发</a></li>
+<li><a href="http://www.cnblogs.com/Eva-J/articles/7293890.html#_label16" target="_blank" rel="noopener">　　几个概念的说明</a></li>
+<li><a href="http://www.cnblogs.com/Eva-J/articles/7293890.html#_label17" target="_blank" rel="noopener">　　面向对象常用术语</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="楔子"><a href="#楔子" class="headerlink" title="楔子"></a>楔子</h1><p>你现在是一家游戏公司的开发人员，现在需要你开发一款叫做&lt;人狗大战&gt;的游戏，你就思考呀，人狗作战，那至少需要2个角色，一个是人， 一个是狗，且人和狗都有不同的技能，比如人拿棍打狗， 狗可以咬人，怎么描述这种不同的角色和他们的功能呢？</p>
+<p>你搜罗了自己掌握的所有技能，写出了下面的代码来描述这两个角色</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> 人和狗的角色定制1</p>
+<p>上面两个方法相当于造了两个模子，游戏里的每个人和每条狗都拥有相同里的属性。游戏开始，你根据一个人或一只狗传入的具体信息来塑造一个具体的人或者狗，怎么生成呢？</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> 生成具体的人和狗</p>
+<p>两个角色对象生成了，狗和人还有不同的功能呀，狗会咬人，人会打狗，对不对? 怎么实现呢，。。想到了， 可以每个功能再写一个函数，想执行哪个功能，直接 调用 就可以了，对不？</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> bark和walk</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> 调用walk和bark</p>
+<p>上面的功能实现的简直是完美！</p>
+<p>但是仔细玩耍一会，你就不小心干了下面这件事</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> 在玩耍中犯了一个小错误</p>
+<p>事实 上，从你写的代码上来看，这并没出错。很显然，人是不能调用狗的功能的，但在你的程序例没有做限制，如何在代码级别实现这个限制呢？</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> 限制功能全新代码</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> 生成具体的人和狗</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> 无法调用了</p>
+<p>你是如此的机智，这样就实现了限制人只能用人自己的功能啦。</p>
+<p>刚刚你用的这种编程思想其实就是简单的面向对象编程，我们创造了两个模子表示游戏里所有的人和狗之后，剩下的狗叫或者人走对于这两个模子来说就不重要了。具体人he狗之间的交互就等着你去使用了。假如你和狗打起来了，这时候你是走路还是拿棍子打狗就由你自己决定了。那你的每一个决定可能都影响着你这场游戏的输赢。这也是不确定的。和我们之前写代码按部就班的走，最终都会实现我们要完成的事情不太一样了。</p>
+<p>尽管如此，我们也只完成了这个游戏非常小的一部分。还有很多功能都没有实现。</p>
+<p>刚才你只是阻止了两个完全 不同的角色 之前的功能混用， 但有没有可能 ，同一个种角色，但有些属性是不同的呢？ 比如 ，大家都打过cs吧，cs里有警察和恐怖份子，但因为都 是人， 所以你写一个角色叫 person(), 警察和恐怖份子都 可以 互相射击，但警察不可以杀人质，恐怖分子可以，这怎么实现呢？ 你想了说想，说，简单，只需要在杀人质的功能里加个判断，如果是警察，就不让杀不就ok了么。 没错， 这虽然 解决了杀人质的问题，但其实你会发现，警察和恐怖分子的区别还有很多，同时又有很多共性，如果 在每个区别处都 单独做判断，那得累死。 </p>
+<p>你想了想说， 那就直接写2个角色吧， 反正 这么多区别， 我的哥， 不能写两个角色呀，因为他们还有很多共性 ， 写两个不同的角色，就代表 相同的功能 也要重写了，是不是我的哥？ 。。。</p>
+<p>好了， 话题就给你点到这， 再多说你的智商也理解不了了！</p>
+<h1 id="面向过程-VS-面向对象"><a href="#面向过程-VS-面向对象" class="headerlink" title="面向过程 VS 面向对象"></a>面向过程 VS 面向对象</h1><p>面向过程的程序设计的核心是过程（流水线式思维），过程即解决问题的步骤，面向过程的设计就好比精心设计好一条流水线，考虑周全什么时候处理什么东西。</p>
+<p><strong>优点是：极大的降低了写程序的复杂度，只需要顺着要执行的步骤，堆叠代码即可。</strong></p>
+<p><strong>缺点是：一套流水线或者流程就是用来解决一个问题，代码牵一发而动全身。</strong></p>
+<p>应用场景：一旦完成基本很少改变的场景，著名的例子有Linux內核，git，以及Apache HTTP Server等。</p>
+<p>面向对象的程序设计的核心是对象（上帝式思维），要理解对象为何物，必须把自己当成上帝，上帝眼里世间存在的万物皆为对象，不存在的也可以创造出来。面向对象的程序设计好比如来设计西游记，如来要解决的问题是把经书传给东土大唐，如来想了想解决这个问题需要四个人：唐僧，沙和尚，猪八戒，孙悟空，每个人都有各自的特征和技能（这就是对象的概念，特征和技能分别对应对象的属性和方法），然而这并不好玩，于是如来又安排了一群妖魔鬼怪，为了防止师徒四人在取经路上被搞死，又安排了一群神仙保驾护航，这些都是对象。然后取经开始，师徒四人与妖魔鬼怪神仙互相缠斗着直到最后取得真经。如来根本不会管师徒四人按照什么流程去取。</p>
+<p>面向对象的程序设计的</p>
+<p><strong>优点是：解决了程序的扩展性。对某一个对象单独修改，会立刻反映到整个体系中，如对游戏中一个人物参数的特征和技能修改都很容易。</strong></p>
+<p><strong>缺点：可控性差，无法向面向过程的程序设计流水线式的可以很精准的预测问题的处理流程与结果，面向对象的程序一旦开始就由对象之间的交互解决问题</strong>，<strong>即便是上帝也无法预测最终结果。于是我们经常看到一个游戏人某一参数的修改极有可能导致阴霸的技能出现，一刀砍死3个人，这个游戏就失去平衡。</strong></p>
+<p>应用场景：需求经常变化的软件，一般需求的变化都集中在用户层，互联网应用，企业内部软件，游戏等都是面向对象的程序设计大显身手的好地方。</p>
+<p>在python 中面向对象的程序设计并不是全部。</p>
+<p>面向对象编程可以使程序的维护和扩展变得更简单，并且可以大大提高程序开发效率 ，另外，基于面向对象的程序可以使它人更加容易理解你的代码逻辑，从而使团队开发变得更从容。</p>
+<p>了解一些名词：类、对象、实例、实例化</p>
+<p>类：具有相同特征的一类事物(人、狗、老虎)</p>
+<p>对象／实例：具体的某一个事物（隔壁阿花、楼下旺财）</p>
+<p>实例化：类——&gt;对象的过程（这在生活中表现的不明显，我们在后面再慢慢解释）</p>
+<h1 id="初识类和对象"><a href="#初识类和对象" class="headerlink" title="初识类和对象"></a>初识类和对象</h1><p>python中一切皆为对象，类型的本质就是类，所以，不管你信不信，你已经使用了很长时间的类了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; dict #类型dict就是类dict</span><br><span class="line">&lt;class &#39;dict&#39;&gt;</span><br><span class="line">&gt;&gt;&gt; d&#x3D;dict(name&#x3D;&#39;eva&#39;) #实例化</span><br><span class="line">&gt;&gt;&gt; d.pop(&#39;name&#39;) #向d发一条消息，执行d的方法pop</span><br><span class="line">&#39;eva&#39;</span><br></pre></td></tr></table></figure>
+
+<p>从上面的例子来看，字典就是一类数据结构，我一说字典你就知道是那个用{}表示，里面由k-v键值对的东西，它还具有一些增删改查的方法。但是我一说字典你能知道字典里具体存了哪些内容么？不能，所以我们说对于一个类来说，它具有相同的特征属性和方法。</p>
+<p>而具体的{‘name’:’eva’}这个字典，它是一个字典，可以使用字典的所有方法，并且里面有了具体的值，它就是字典的一个对象。对象就是已经实实在在存在的某一个具体的个体。</p>
+<p>再举一个其他的例子，通俗一点，比如你现在有一个动物园，你想描述这个动物园，那么动物园里的每一种动物就是一个类，老虎、天鹅、鳄鱼、熊。他们都有相同的属性，比如身高体重出生时间和品种，还有各种动作，比如鳄鱼会游泳，天鹅会飞，老虎会跑，熊会吃。</p>
+<p>但是这些老虎熊啥的都不是具体的某一只，而是一类动物。虽然他们都有身高体重，但是你却没有办法确定这个值是多少。如果这个时候给你一只具体的老虎，而你还没死，那你就能给他量量身高称称体重，这些数值是不是就变成具体的了？那么具体的这一只老虎就是一个具体的实例，也是一个对象。不止这一只，其实每一只具体的老虎都有自己的身高体重，那么每一只老虎都是老虎类的一个对象。</p>
+<p><strong>在python中，用变量表示特征，用函数表示技能，因而具有相同特征和技能的一类事物就是‘类’，对象是则是这一类事物中具体的一个。</strong></p>
+<h2 id="类的相关知识"><a href="#类的相关知识" class="headerlink" title="类的相关知识"></a>类的相关知识</h2><h3 id="初识类"><a href="#初识类" class="headerlink" title="初识类"></a><strong>初识类</strong></h3><h4 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h4><p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> 声明函数</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> 声明类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class Person:   #定义一个人类</span><br><span class="line">    role &#x3D; &#39;person&#39;  #人的角色属性都是人</span><br><span class="line">    def walk(self):  #人都可以走路，也就是有一个走路方法，也叫动态属性</span><br><span class="line">        print(&quot;person is walking...&quot;)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="类有两种作用：属性引用和实例化"><a href="#类有两种作用：属性引用和实例化" class="headerlink" title="类有两种作用：属性引用和实例化"></a><strong>类有两种作用：属性引用和实例化</strong></h3><h4 id="属性引用（类名-属性）"><a href="#属性引用（类名-属性）" class="headerlink" title="属性引用（类名.属性）"></a><strong>属性引用（类名.属性）</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Person:   #定义一个人类</span><br><span class="line">    role &#x3D; &#39;person&#39;  #人的角色属性都是人</span><br><span class="line">    def walk(self):  #人都可以走路，也就是有一个走路方法</span><br><span class="line">        print(&quot;person is walking...&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(Person.role)  #查看人的role属性</span><br><span class="line">print(Person.walk)  #引用人的走路方法，注意，这里不是在调用</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="实例化：类名加括号就是实例化，会自动触发init函数的运行，可以用它来为每个实例定制自己的特征"><a href="#实例化：类名加括号就是实例化，会自动触发init函数的运行，可以用它来为每个实例定制自己的特征" class="headerlink" title="实例化：类名加括号就是实例化，会自动触发init函数的运行，可以用它来为每个实例定制自己的特征"></a>实例化：类名加括号就是实例化，会自动触发<strong>init</strong>函数的运行，可以用它来为每个实例定制自己的特征</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Person:   #定义一个人类</span><br><span class="line">    role &#x3D; &#39;person&#39;  #人的角色属性都是人</span><br><span class="line">    def __init__(self,name):</span><br><span class="line">        self.name &#x3D; name  # 每一个角色都有自己的昵称;</span><br><span class="line">        </span><br><span class="line">    def walk(self):  #人都可以走路，也就是有一个走路方法</span><br><span class="line">        print(&quot;person is walking...&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(Person.role)  #查看人的role属性</span><br><span class="line">print(Person.walk)  #引用人的走路方法，注意，这里不是在调用</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>实例化的过程就是类——&gt;对象的过程</p>
+<p>原本我们只有一个Person类，在这个过程中，产生了一个egg对象，有自己具体的名字、攻击力和生命值。</p>
+<p>语法：对象名 = 类名(参数)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">egg &#x3D; Person(&#39;egon&#39;)  #类名()就等于在执行Person.__init__()</span><br><span class="line">#执行完__init__()就会返回一个对象。这个对象类似一个字典，存着属于这个人本身的一些属性和方法。</span><br><span class="line">#你可以偷偷的理解：egg &#x3D; &#123;&#39;name&#39;:&#39;egon&#39;,&#39;walk&#39;:walk&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看属性-amp-调用方法"><a href="#查看属性-amp-调用方法" class="headerlink" title="查看属性&amp;调用方法"></a>查看属性&amp;调用方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(egg.name)     #查看属性直接 对象名.属性名</span><br><span class="line">print(egg.walk())   #调用方法，对象名.方法名()</span><br></pre></td></tr></table></figure>
+
+<h4 id="关于self"><a href="#关于self" class="headerlink" title="关于self"></a>关于self</h4><p>self：在实例化时自动将对象/实例本身传给<strong>init</strong>的第一个参数，你也可以给他起个别的名字，但是正常人都不会这么做。<br>因为你瞎改别人就不认识</p>
+<h4 id="类属性的补充"><a href="#类属性的补充" class="headerlink" title="类属性的补充"></a>类属性的补充</h4><p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> 类属性的补充</p>
+<h2 id="对象的相关知识"><a href="#对象的相关知识" class="headerlink" title="对象的相关知识"></a>对象的相关知识</h2><p>回到咱们的人狗大战：现在我们需要对我们的类做出一点点改变<br>人类除了可以走路之外，还应该具备一些攻击技能。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Person:  # 定义一个人类</span><br><span class="line">    role &#x3D; &#39;person&#39;  # 人的角色属性都是人</span><br><span class="line"></span><br><span class="line">    def __init__(self, name, aggressivity, life_value):</span><br><span class="line">        self.name &#x3D; name  # 每一个角色都有自己的昵称;</span><br><span class="line">        self.aggressivity &#x3D; aggressivity  # 每一个角色都有自己的攻击力;</span><br><span class="line">        self.life_value &#x3D; life_value  # 每一个角色都有自己的生命值;</span><br><span class="line"></span><br><span class="line">    def attack(self,dog):  </span><br><span class="line">        # 人可以攻击狗，这里的狗也是一个对象。</span><br><span class="line">        # 人攻击狗，那么狗的生命值就会根据人的攻击力而下降</span><br><span class="line">        dog.life_value -&#x3D; self.aggressivit</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="对象是关于类而实际存在的一个例子，即实例"><a href="#对象是关于类而实际存在的一个例子，即实例" class="headerlink" title="对象是关于类而实际存在的一个例子，即实例"></a>对象是关于类而实际存在的一个例子，即实例</h4><h4 id="对象-实例只有一种作用：属性引用"><a href="#对象-实例只有一种作用：属性引用" class="headerlink" title="对象/实例只有一种作用：属性引用"></a><strong>对象/实例只有一种作用：属性引用</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">egg &#x3D; Person(&#39;egon&#39;,10,1000)</span><br><span class="line">print(egg.name)</span><br><span class="line">print(egg.aggressivity)</span><br><span class="line">print(egg.life_value)</span><br></pre></td></tr></table></figure>
+
+<p>当然了，你也可以引用一个方法，因为方法也是一个属性，只不过是一个类似函数的属性，我们也管它叫动态属性。<br>引用动态属性并不是执行这个方法，要想调用方法和调用函数是一样的，都需要在后面加上括号</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(egg.attack)</span><br></pre></td></tr></table></figure>
+
+<p>我知道在类里说，你可能还有好多地方不能理解。那我们就用函数来解释一下这个类呀，对象呀到底是个啥，你偷偷的用这个理解就好了，不要告诉别人</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> 帮你了解面向对象</p>
+<p>面向对象小结——定义及调用的固定模式</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> 小结</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> 练一练</p>
+<h2 id="对象之间的交互"><a href="#对象之间的交互" class="headerlink" title="对象之间的交互"></a>对象之间的交互</h2><p>现在我们已经有一个人类了，通过给人类一些具体的属性我们就可以拿到一个实实在在的人。<br>现在我们要再创建一个狗类，狗就不能打人了，只能咬人，所以我们给狗一个bite方法。<br>有了狗类，我们还要实例化一只实实在在的狗出来。<br>然后人和狗就可以打架了。现在我们就来让他们打一架吧！</p>
+<h4 id="创建一个狗类"><a href="#创建一个狗类" class="headerlink" title="创建一个狗类"></a>创建一个狗类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Dog:  # 定义一个狗类</span><br><span class="line">    role &#x3D; &#39;dog&#39;  # 狗的角色属性都是狗</span><br><span class="line"></span><br><span class="line">    def __init__(self, name, breed, aggressivity, life_value):</span><br><span class="line">        self.name &#x3D; name  # 每一只狗都有自己的昵称;</span><br><span class="line">        self.breed &#x3D; breed  # 每一只狗都有自己的品种;</span><br><span class="line">        self.aggressivity &#x3D; aggressivity  # 每一只狗都有自己的攻击力;</span><br><span class="line">        self.life_value &#x3D; life_value  # 每一只狗都有自己的生命值;</span><br><span class="line"></span><br><span class="line">    def bite(self,people):</span><br><span class="line">        # 狗可以咬人，这里的狗也是一个对象。</span><br><span class="line">        # 狗咬人，那么人的生命值就会根据狗的攻击力而下降　　　　 dog.life_value -&#x3D; self.aggressivit</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h4 id="实例化一只实实在在的二哈"><a href="#实例化一只实实在在的二哈" class="headerlink" title="实例化一只实实在在的二哈"></a>实例化一只实实在在的二哈</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ha2 &#x3D; Dog(&#39;二愣子&#39;,&#39;哈士奇&#39;,10,1000)  #创造了一只实实在在的狗ha2</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="交互-egon打ha2一下"><a href="#交互-egon打ha2一下" class="headerlink" title="交互 egon打ha2一下"></a>交互 egon打ha2一下</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(ha2.life_value)         #看看ha2的生命值</span><br><span class="line">egg.attack(ha2)               #egg打了ha2一下</span><br><span class="line">print(ha2.life_value)         #ha2掉了10点血</span><br></pre></td></tr></table></figure>
+
+<h4 id="完整的代码"><a href="#完整的代码" class="headerlink" title="完整的代码"></a>完整的代码</h4><p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> egon大战哈士奇</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> 一个简单的例子帮你理解面向对象</p>
+<h2 id="类命名空间与对象、实例的命名空间"><a href="#类命名空间与对象、实例的命名空间" class="headerlink" title="类命名空间与对象、实例的命名空间"></a>类命名空间与对象、实例的命名空间</h2><p><strong>创建一个类就会创建一个类的名称空间，用来存储类中定义的所有名字，这些名字称为类的属性</strong></p>
+<p>而类有两种属性：静态属性和动态属性</p>
+<ul>
+<li>静态属性就是直接在类中定义的变量</li>
+<li>动态属性就是定义在类中的方法</li>
+</ul>
+<h4 id="其中类的数据属性是共享给所有对象的"><a href="#其中类的数据属性是共享给所有对象的" class="headerlink" title="其中类的数据属性是共享给所有对象的"></a>其中类的数据属性是共享给所有对象的</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;id(egg.role)</span><br><span class="line">4341594072</span><br><span class="line">&gt;&gt;&gt;id(Person.role)</span><br><span class="line">4341594072</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="而类的动态属性是绑定到所有对象的"><a href="#而类的动态属性是绑定到所有对象的" class="headerlink" title="而类的动态属性是绑定到所有对象的"></a>而类的动态属性是绑定到所有对象的</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;egg.attack</span><br><span class="line">&lt;bound method Person.attack of &lt;__main__.Person object at 0x101285860&gt;&gt;</span><br><span class="line">&gt;&gt;&gt;Person.attack</span><br><span class="line">&lt;function Person.attack at 0x10127abf8&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>创建一个对象/实例就会创建一个对象/实例的名称空间，存放对象/实例的名字，称为对象/实例的属性</strong></p>
+<p>在obj.name会先从obj自己的名称空间里找name，找不到则去类中找，类也找不到就找父类…最后都找不到就抛出异常</p>
+<h2 id="面向对象的组合用法"><a href="#面向对象的组合用法" class="headerlink" title="面向对象的组合用法"></a>面向对象的组合用法</h2><p><strong>软件重用的重要方式除了继承之外还有另外一种方式，即：组合</strong></p>
+<p><strong>组合指的是，在一个类中以另外一个类的对象作为数据属性，称为类的组合</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Weapon:</span><br><span class="line">    def prick(self, obj):  # 这是该装备的主动技能,扎死对方</span><br><span class="line">        obj.life_value -&#x3D; 500  # 假设攻击力是500</span><br><span class="line"></span><br><span class="line">class Person:  # 定义一个人类</span><br><span class="line">    role &#x3D; &#39;person&#39;  # 人的角色属性都是人</span><br><span class="line"></span><br><span class="line">    def __init__(self, name):</span><br><span class="line">        self.name &#x3D; name  # 每一个角色都有自己的昵称;</span><br><span class="line">        self.weapon &#x3D; Weapon()  # 给角色绑定一个武器;</span><br><span class="line">        </span><br><span class="line">egg &#x3D; Person(&#39;egon&#39;)</span><br><span class="line">egg.weapon.prick() </span><br><span class="line">#egg组合了一个武器的对象，可以直接egg.weapon来使用组合类中的所有方法</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+<p><strong>圆环是由两个圆组成的，圆环的面积是外面圆的面积减去内部圆的面积。圆环的周长是内部圆的周长加上外部圆的周长。</strong><br><strong>这个时候，我们就首先实现一个圆形类，计算一个圆的周长和面积。然后在”环形类”中组合圆形的实例作为自己的属性来用</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">from math import pi</span><br><span class="line"></span><br><span class="line">class Circle:</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    定义了一个圆形类；</span><br><span class="line">    提供计算面积(area)和周长(perimeter)的方法</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    def __init__(self,radius):</span><br><span class="line">        self.radius &#x3D; radius</span><br><span class="line"></span><br><span class="line">    def area(self):</span><br><span class="line">         return pi * self.radius * self.radius</span><br><span class="line"></span><br><span class="line">    def perimeter(self):</span><br><span class="line">        return 2 * pi *self.radius</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">circle &#x3D;  Circle(10) #实例化一个圆</span><br><span class="line">area1 &#x3D; circle.area() #计算圆面积</span><br><span class="line">per1 &#x3D; circle.perimeter() #计算圆周长</span><br><span class="line">print(area1,per1) #打印圆面积和周长</span><br><span class="line"></span><br><span class="line">class Ring:</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    定义了一个圆环类</span><br><span class="line">    提供圆环的面积和周长的方法</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    def __init__(self,radius_outside,radius_inside):</span><br><span class="line">        self.outsid_circle &#x3D; Circle(radius_outside)</span><br><span class="line">        self.inside_circle &#x3D; Circle(radius_inside)</span><br><span class="line"></span><br><span class="line">    def area(self):</span><br><span class="line">        return self.outsid_circle.area() - self.inside_circle.area()</span><br><span class="line"></span><br><span class="line">    def perimeter(self):</span><br><span class="line">        return  self.outsid_circle.perimeter() + self.inside_circle.perimeter()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ring &#x3D; Ring(10,5) #实例化一个环形</span><br><span class="line">print(ring.perimeter()) #计算环形的周长</span><br><span class="line">print(ring.area()) #计算环形的面积</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p><strong>用组合的方式建立了类与组合的类之间的关系，它是一种‘有’的关系,比如教授有生日，教授教python课程</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">class BirthDate:    def __init__(self,year,month,day):</span><br><span class="line">        self.year&#x3D;year</span><br><span class="line">        self.month&#x3D;month</span><br><span class="line">        self.day&#x3D;day</span><br><span class="line"></span><br><span class="line">class Couse:</span><br><span class="line">    def __init__(self,name,price,period):</span><br><span class="line">        self.name&#x3D;name</span><br><span class="line">        self.price&#x3D;price</span><br><span class="line">        self.period&#x3D;period</span><br><span class="line"></span><br><span class="line">class Teacher:</span><br><span class="line">    def __init__(self,name,gender,birth,course):</span><br><span class="line">        self.name&#x3D;name </span><br><span class="line">        self.gender&#x3D;gender</span><br><span class="line">        self.birth&#x3D;birth</span><br><span class="line">        self.course&#x3D;course</span><br><span class="line">    def teach(self): </span><br><span class="line">        print(&#39;teaching&#39;)</span><br><span class="line">p1&#x3D;Teacher(&#39;egon&#39;,&#39;male&#39;, </span><br><span class="line">            BirthDate(&#39;1995&#39;,&#39;1&#39;,&#39;27&#39;), </span><br><span class="line">            Couse(&#39;python&#39;,&#39;28000&#39;,&#39;4 months&#39;)</span><br><span class="line">           ) </span><br><span class="line"></span><br><span class="line">print(p1.birth.year,p1.birth.month,p1.birth.day) </span><br><span class="line"></span><br><span class="line">print(p1.course.name,p1.course.price,p1.course.period)</span><br><span class="line">&#39;&#39;&#39; </span><br><span class="line">运行结果: </span><br><span class="line">1 27 </span><br><span class="line">python 28000 4 months </span><br><span class="line">&#39;&#39;&#39;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><strong>当类之间有显著不同，并且较小的类是较大的类所需要的组件时，用组合比较好</strong></p>
+<h2 id="初识面向对象小结"><a href="#初识面向对象小结" class="headerlink" title="初识面向对象小结"></a>初识面向对象小结</h2><p>定义一个人类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Person:  # 定义一个人类</span><br><span class="line">    role &#x3D; &#39;person&#39;  # 人的角色属性都是人</span><br><span class="line"></span><br><span class="line">    def __init__(self, name, aggressivity, life_value, money):</span><br><span class="line">        self.name &#x3D; name  # 每一个角色都有自己的昵称;</span><br><span class="line">        self.aggressivity &#x3D; aggressivity  # 每一个角色都有自己的攻击力;</span><br><span class="line">        self.life_value &#x3D; life_value  # 每一个角色都有自己的生命值;</span><br><span class="line">        self.money &#x3D; money</span><br><span class="line"></span><br><span class="line">    def attack(self,dog):</span><br><span class="line">        # 人可以攻击狗，这里的狗也是一个对象。</span><br><span class="line">        # 人攻击狗，那么狗的生命值就会根据人的攻击力而下降        dog.life_value -&#x3D; self.aggressivity</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p>定义一个狗类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Dog:  # 定义一个狗类</span><br><span class="line">    role &#x3D; &#39;dog&#39;  # 狗的角色属性都是狗</span><br><span class="line"></span><br><span class="line">    def __init__(self, name, breed, aggressivity, life_value):</span><br><span class="line">        self.name &#x3D; name  # 每一只狗都有自己的昵称;</span><br><span class="line">        self.breed &#x3D; breed  # 每一只狗都有自己的品种;</span><br><span class="line">        self.aggressivity &#x3D; aggressivity  # 每一只狗都有自己的攻击力;</span><br><span class="line">        self.life_value &#x3D; life_value  # 每一只狗都有自己的生命值;</span><br><span class="line"></span><br><span class="line">    def bite(self,people):</span><br><span class="line">        # 狗可以咬人，这里的狗也是一个对象。</span><br><span class="line">        # 狗咬人，那么人的生命值就会根据狗的攻击力而下降</span><br><span class="line">        people.life_value -&#x3D; self.aggressivity</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p>接下来，又创建一个新的兵器类。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Weapon:</span><br><span class="line">    def __init__(self,name, price, aggrev, life_value):</span><br><span class="line">        self.name &#x3D; name</span><br><span class="line">        self.price &#x3D; price</span><br><span class="line">        self.aggrev &#x3D; aggrev</span><br><span class="line">        self.life_value &#x3D; life_value</span><br><span class="line"></span><br><span class="line">    def update(self, obj):  #obj就是要带这个装备的人</span><br><span class="line">        obj.money -&#x3D; self.price  # 用这个武器的人花钱买所以对应的钱要减少</span><br><span class="line">        obj.aggressivity +&#x3D; self.aggrev  # 带上这个装备可以让人增加攻击</span><br><span class="line">        obj.life_value +&#x3D; self.life_value  # 带上这个装备可以让人增加生命值</span><br><span class="line"></span><br><span class="line">    def prick(self, obj):  # 这是该装备的主动技能,扎死对方</span><br><span class="line">        obj.life_value -&#x3D; 500  # 假设攻击力是500</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p>测试交互 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">lance &#x3D; Weapon(&#39;长矛&#39;,200,6,100)</span><br><span class="line">egg &#x3D; Person(&#39;egon&#39;,10,1000,600)  #创造了一个实实在在的人egg</span><br><span class="line">ha2 &#x3D; Dog(&#39;二愣子&#39;,&#39;哈士奇&#39;,10,1000)  #创造了一只实实在在的狗ha2</span><br><span class="line"></span><br><span class="line">#egg独自力战&quot;二愣子&quot;深感吃力，决定穷毕生积蓄买一把武器</span><br><span class="line">if egg.money &gt; lance.price: #如果egg的钱比装备的价格多，可以买一把长矛</span><br><span class="line">    lance.update(egg) #egg花钱买了一个长矛防身，且自身属性得到了提高</span><br><span class="line">    egg.weapon &#x3D; lance #egg装备上了长矛</span><br><span class="line"></span><br><span class="line">print(egg.money,egg.life_value,egg.aggressivity)</span><br><span class="line"></span><br><span class="line">print(ha2.life_value)</span><br><span class="line">egg.attack(ha2)   #egg打了ha2一下</span><br><span class="line">print(ha2.life_value)</span><br><span class="line">egg.weapon.prick(ha2) #发动武器技能</span><br><span class="line">print(ha2.life_value) #ha2不敌狡猾的人类用武器取胜，血槽空了一半</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>按照这种思路一点一点的设计类和对象，最终你完全可以实现一个对战类游戏。</p>
+<h1 id="面向对象的三大特性"><a href="#面向对象的三大特性" class="headerlink" title="面向对象的三大特性"></a>面向对象的三大特性</h1><h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><h3 id="什么是继承"><a href="#什么是继承" class="headerlink" title="什么是继承"></a><strong>什么是继承</strong></h3><p>继承是一种创建新类的方式，在python中，新建的类可以继承一个或多个父类，父类又可称为基类或超类，新建的类称为派生类或子类</p>
+<p>python中类的继承分为：单继承和多继承</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class ParentClass1: #定义父类</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">class ParentClass2: #定义父类</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">class SubClass1(ParentClass1): #单继承，基类是ParentClass1，派生类是SubClass</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">class SubClass2(ParentClass1,ParentClass2): #python支持多继承，用逗号分隔开多个继承的类</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>查看继承</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; SubClass1.__bases__ #__base__只查看从左到右继承的第一个子类，__bases__则是查看所有继承的父类</span><br><span class="line">(&lt;class &#39;__main__.ParentClass1&#39;&gt;,)</span><br><span class="line">&gt;&gt;&gt; SubClass2.__bases__</span><br><span class="line">(&lt;class &#39;__main__.ParentClass1&#39;&gt;, &lt;class &#39;__main__.ParentClass2&#39;&gt;)</span><br></pre></td></tr></table></figure>
+
+<p>提示：如果没有指定基类，python的类会默认继承object类，object是所有python类的基类，它提供了一些常见方法（如<strong>str</strong>）的实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; ParentClass1.__bases__</span><br><span class="line">(&lt;class &#39;object&#39;&gt;,)</span><br><span class="line">&gt;&gt;&gt; ParentClass2.__bases__</span><br><span class="line">(&lt;class &#39;object&#39;&gt;,)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="继承与抽象（先抽象再继承）"><a href="#继承与抽象（先抽象再继承）" class="headerlink" title="继承与抽象（先抽象再继承）"></a><strong>继承与抽象（先抽象再继承）</strong></h3><p>抽象即抽取类似或者说比较像的部分。</p>
+<p>抽象分成两个层次： </p>
+<p>1.将奥巴马和梅西这俩对象比较像的部分抽取成类； </p>
+<p>2.将人，猪，狗这三个类比较像的部分抽取成父类。</p>
+<p>抽象最主要的作用是划分类别（可以隔离关注点，降低复杂度）</p>
+<p><img src="https://images2017.cnblogs.com/blog/827651/201708/827651-20170809205054370-2144865424.png" alt="img"></p>
+<p><strong>继承：是基于抽象的结果，通过编程语言去实现它，肯定是先经历抽象这个过程，才能通过继承的方式去表达出抽象的结构。</strong></p>
+<p>抽象只是分析和设计的过程中，一个动作或者说一种技巧，通过抽象可以得到类</p>
+<p><img src="https://images2017.cnblogs.com/blog/827651/201708/827651-20170809205126886-720065307.png" alt="img"></p>
+<h3 id="继承与重用性"><a href="#继承与重用性" class="headerlink" title="继承与重用性"></a><strong>继承与重用性</strong></h3><p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> 使用继承来解决代码重用的例子</p>
+<p>在开发程序的过程中，如果我们定义了一个类A，然后又想新建立另外一个类B，但是类B的大部分内容与类A的相同时</p>
+<p>我们不可能从头开始写一个类B，这就用到了类的继承的概念。</p>
+<p>通过继承的方式新建类B，让B继承A，B会‘遗传’A的所有属性(数据属性和函数属性)，实现代码重用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Animal:</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    人和狗都是动物，所以创造一个Animal基类</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    def __init__(self, name, aggressivity, life_value):</span><br><span class="line">        self.name &#x3D; name  # 人和狗都有自己的昵称;</span><br><span class="line">        self.aggressivity &#x3D; aggressivity  # 人和狗都有自己的攻击力;</span><br><span class="line">        self.life_value &#x3D; life_value  # 人和狗都有自己的生命值;</span><br><span class="line"></span><br><span class="line">    def eat(self):</span><br><span class="line">        print(&#39;%s is eating&#39;%self.name)</span><br><span class="line"></span><br><span class="line">class Dog(Animal):</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">class Person(Animal):</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">egg &#x3D; Person(&#39;egon&#39;,10,1000)</span><br><span class="line">ha2 &#x3D; Dog(&#39;二愣子&#39;,50,1000)</span><br><span class="line">egg.eat()</span><br><span class="line">ha2.eat()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>提示：用已经有的类建立一个新的类，这样就重用了已经有的软件中的一部分设置大部分，大大生了编程工作量，这就是常说的软件重用，不仅可以重用自己的类，也可以继承别人的，比如标准库，来定制新的数据类型，这样就是大大缩短了软件开发周期，对大型软件开发来说，意义重大.</p>
+<h3 id="派生"><a href="#派生" class="headerlink" title="派生"></a><strong>派生</strong></h3><p>当然子类也可以添加自己新的属性或者在自己这里重新定义这些属性（不会影响到父类），需要注意的是，一旦重新定义了自己的属性且与父类重名，那么调用新增的属性时，就以自己为准了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">class Animal:</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    人和狗都是动物，所以创造一个Animal基类</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    def __init__(self, name, aggressivity, life_value):</span><br><span class="line">        self.name &#x3D; name  # 人和狗都有自己的昵称;</span><br><span class="line">        self.aggressivity &#x3D; aggressivity  # 人和狗都有自己的攻击力;</span><br><span class="line">        self.life_value &#x3D; life_value  # 人和狗都有自己的生命值;</span><br><span class="line"></span><br><span class="line">    def eat(self):</span><br><span class="line">        print(&#39;%s is eating&#39;%self.name)</span><br><span class="line"></span><br><span class="line">class Dog(Animal):</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    狗类，继承Animal类</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    def bite(self, people):</span><br><span class="line">        &#39;&#39;&#39;</span><br><span class="line">        派生：狗有咬人的技能</span><br><span class="line">        :param people:  </span><br><span class="line">        &#39;&#39;&#39;</span><br><span class="line">        people.life_value -&#x3D; self.aggressivity</span><br><span class="line"></span><br><span class="line">class Person(Animal):</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    人类，继承Animal</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    def attack(self, dog):</span><br><span class="line">        &#39;&#39;&#39;</span><br><span class="line">        派生：人有攻击的技能</span><br><span class="line">        :param dog: </span><br><span class="line">        &#39;&#39;&#39;</span><br><span class="line">        dog.life_value -&#x3D; self.aggressivity</span><br><span class="line"></span><br><span class="line">egg &#x3D; Person(&#39;egon&#39;,10,1000)</span><br><span class="line">ha2 &#x3D; Dog(&#39;二愣子&#39;,50,1000)</span><br><span class="line">print(ha2.life_value)</span><br><span class="line">print(egg.attack(ha2))</span><br><span class="line">print(ha2.life_value)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>注意：像ha2.life_value之类的属性引用，会先从实例中找life_value然后去类中找，然后再去父类中找…直到最顶级的父类。</p>
+<p>在子类中，新建的重名的函数属性，在编辑函数内功能的时候，有可能需要重用父类中重名的那个函数功能，应该是用调用普通函数的方式，即：类名.func()，此时就与调用普通函数无异了，因此即便是self参数也要为其传值.</p>
+<p>在python3中，子类执行父类的方法也可以直接用super方法.</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> 帮你了解super</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">class Animal:</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    人和狗都是动物，所以创造一个Animal基类</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    def __init__(self, name, aggressivity, life_value):</span><br><span class="line">        self.name &#x3D; name  # 人和狗都有自己的昵称;</span><br><span class="line">        self.aggressivity &#x3D; aggressivity  # 人和狗都有自己的攻击力;</span><br><span class="line">        self.life_value &#x3D; life_value  # 人和狗都有自己的生命值;</span><br><span class="line"></span><br><span class="line">    def eat(self):</span><br><span class="line">        print(&#39;%s is eating&#39;%self.name)</span><br><span class="line"></span><br><span class="line">class Dog(Animal):</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    狗类，继承Animal类</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    def __init__(self,name,breed,aggressivity,life_value):</span><br><span class="line">        super().__init__(name, aggressivity, life_value) #执行父类Animal的init方法</span><br><span class="line">        self.breed &#x3D; breed  #派生出了新的属性</span><br><span class="line"></span><br><span class="line">    def bite(self, people):</span><br><span class="line">        &#39;&#39;&#39;</span><br><span class="line">        派生出了新的技能：狗有咬人的技能</span><br><span class="line">        :param people:  </span><br><span class="line">        &#39;&#39;&#39;</span><br><span class="line">        people.life_value -&#x3D; self.aggressivity</span><br><span class="line"></span><br><span class="line">    def eat(self):</span><br><span class="line">        # Animal.eat(self)</span><br><span class="line">        #super().eat()</span><br><span class="line">        print(&#39;from Dog&#39;)</span><br><span class="line"></span><br><span class="line">class Person(Animal):</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    人类，继承Animal</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    def __init__(self,name,aggressivity, life_value,money):</span><br><span class="line">        #Animal.__init__(self, name, aggressivity, life_value)</span><br><span class="line">        #super(Person, self).__init__(name, aggressivity, life_value)</span><br><span class="line">        super().__init__(name,aggressivity, life_value)  #执行父类的init方法</span><br><span class="line">        self.money &#x3D; money   #派生出了新的属性</span><br><span class="line"></span><br><span class="line">    def attack(self, dog):</span><br><span class="line">        &#39;&#39;&#39;</span><br><span class="line">        派生出了新的技能：人有攻击的技能</span><br><span class="line">        :param dog: </span><br><span class="line">        &#39;&#39;&#39;</span><br><span class="line">        dog.life_value -&#x3D; self.aggressivity</span><br><span class="line"></span><br><span class="line">    def eat(self):</span><br><span class="line">        #super().eat()</span><br><span class="line">        Animal.eat(self)</span><br><span class="line">        print(&#39;from Person&#39;)</span><br><span class="line"></span><br><span class="line">egg &#x3D; Person(&#39;egon&#39;,10,1000,600)</span><br><span class="line">ha2 &#x3D; Dog(&#39;二愣子&#39;,&#39;哈士奇&#39;,10,1000)</span><br><span class="line">print(egg.name)</span><br><span class="line">print(ha2.name)</span><br><span class="line">egg.eat()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p><strong>通过继承建立了派生类与基类之间的关系，它是一种’是’的关系，比如白马是马，人是动物。</strong></p>
+<p><strong>当类之间有很多相同的功能，提取这些共同的功能做成基类，用继承比较好，比如教授是老师</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; class Teacher:</span><br><span class="line">...     def __init__(self,name,gender):</span><br><span class="line">...         self.name&#x3D;name</span><br><span class="line">...         self.gender&#x3D;gender</span><br><span class="line">...     def teach(self):</span><br><span class="line">...         print(&#39;teaching&#39;)</span><br><span class="line">... </span><br><span class="line">&gt;&gt;&gt; </span><br><span class="line">&gt;&gt;&gt; class Professor(Teacher):</span><br><span class="line">...     pass</span><br><span class="line">... </span><br><span class="line">&gt;&gt;&gt; p1&#x3D;Professor(&#39;egon&#39;,&#39;male&#39;)</span><br><span class="line">&gt;&gt;&gt; p1.teach()</span><br><span class="line">teaching</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="抽象类与接口类"><a href="#抽象类与接口类" class="headerlink" title="抽象类与接口类"></a><strong>抽象类与接口类</strong></h3><h3 id="接口类"><a href="#接口类" class="headerlink" title="接口类"></a>接口类</h3><p>继承有两种用途：</p>
+<p>一：继承基类的方法，并且做出自己的改变或者扩展（代码重用）  </p>
+<p>二：声明某个子类兼容于某基类，定义一个接口类Interface，接口类中定义了一些接口名（就是函数名）且并未实现接口的功能，子类继承接口类，并且实现接口中的功能</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class Alipay:</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    支付宝支付</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    def pay(self,money):</span><br><span class="line">        print(&#39;支付宝支付了%s元&#39;%money)</span><br><span class="line"></span><br><span class="line">class Applepay:</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    apple pay支付</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    def pay(self,money):</span><br><span class="line">        print(&#39;apple pay支付了%s元&#39;%money)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def pay(payment,money):</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    支付函数，总体负责支付</span><br><span class="line">    对应支付的对象和要支付的金额</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    payment.pay(money)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">p &#x3D; Alipay()</span><br><span class="line">pay(p,200)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p>开发中容易出现的问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class Alipay:</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    支付宝支付</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    def pay(self,money):</span><br><span class="line">        print(&#39;支付宝支付了%s元&#39;%money)</span><br><span class="line"></span><br><span class="line">class Applepay:</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    apple pay支付</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    def pay(self,money):</span><br><span class="line">        print(&#39;apple pay支付了%s元&#39;%money)</span><br><span class="line"></span><br><span class="line">class Wechatpay:</span><br><span class="line">    def fuqian(self,money):</span><br><span class="line">        &#39;&#39;&#39;</span><br><span class="line">        实现了pay的功能，但是名字不一样</span><br><span class="line">        &#39;&#39;&#39;</span><br><span class="line">        print(&#39;微信支付了%s元&#39;%money)</span><br><span class="line"></span><br><span class="line">def pay(payment,money):</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    支付函数，总体负责支付</span><br><span class="line">    对应支付的对象和要支付的金额</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    payment.pay(money)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">p &#x3D; Wechatpay()</span><br><span class="line">pay(p,200)   #执行会报错</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>接口初成：手动报异常：NotImplementedError来解决开发中遇到的问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Payment:</span><br><span class="line">    def pay(self):</span><br><span class="line">        raise NotImplementedError</span><br><span class="line"></span><br><span class="line">class Wechatpay(Payment):</span><br><span class="line">    def fuqian(self,money):</span><br><span class="line">        print(&#39;微信支付了%s元&#39;%money)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">p &#x3D; Wechatpay()  #这里不报错</span><br><span class="line">pay(p,200)      #这里报错了</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>借用abc模块来实现接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">from abc import ABCMeta,abstractmethod</span><br><span class="line"></span><br><span class="line">class Payment(metaclass&#x3D;ABCMeta):</span><br><span class="line">    @abstractmethod</span><br><span class="line">    def pay(self,money):</span><br><span class="line">        pass</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Wechatpay(Payment):</span><br><span class="line">    def fuqian(self,money):</span><br><span class="line">        print(&#39;微信支付了%s元&#39;%money)</span><br><span class="line"></span><br><span class="line">p &#x3D; Wechatpay() #不调就报错了</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p>实践中，继承的第一种含义意义并不很大，甚至常常是有害的。因为它使得子类与基类出现强耦合。</p>
+<p>继承的第二种含义非常重要。它又叫“接口继承”。<br>接口继承实质上是要求“做出一个良好的抽象，这个抽象规定了一个兼容接口，使得外部调用者无需关心具体细节，可一视同仁的处理实现了特定接口的所有对象”——这在程序设计上，叫做归一化。</p>
+<p>归一化使得高层的外部使用者可以不加区分的处理所有接口兼容的对象集合——就好象linux的泛文件概念一样，所有东西都可以当文件处理，不必关心它是内存、磁盘、网络还是屏幕（当然，对底层设计者，当然也可以区分出“字符设备”和“块设备”，然后做出针对性的设计：细致到什么程度，视需求而定）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">依赖倒置原则：</span><br><span class="line">高层模块不应该依赖低层模块，二者都应该依赖其抽象；抽象不应该应该依赖细节；细节应该依赖抽象。换言之，要针对接口编程，而不是针对实现编程</span><br></pre></td></tr></table></figure>
+
+<p>在python中根本就没有一个叫做interface的关键字，上面的代码只是看起来像接口，其实并没有起到接口的作用，子类完全可以不用去实现接口 ，如果非要去模仿接口的概念，可以借助第三方模块：</p>
+<p><a href="http://pypi.python.org/pypi/zope.interface" target="_blank" rel="noopener">http://pypi.python.org/pypi/zope.interface</a></p>
+<p><a href="http://blog.csdn.net/hanhuili/article/details/9389433" target="_blank" rel="noopener">twisted</a>的twisted\internet\interface.py里使用zope.interface</p>
+<p>文档<a href="https://zopeinterface.readthedocs.io/en/latest/" target="_blank" rel="noopener">https://zopeinterface.readthedocs.io/en/latest/</a></p>
+<p>设计模式：<a href="https://github.com/faif/python-patterns" target="_blank" rel="noopener">https://github.com/faif/python-patterns</a></p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> 为何要用接口</p>
+<h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><p><strong>什么是抽象类</strong></p>
+<p>  <em>与java一样，python也有抽象类的概念但是同样需要借助模块实现，*</em>抽象类是一个特殊的类，它的特殊之处在于只能被继承，不能被实例化***</p>
+<p><strong>为什么要有抽象类</strong></p>
+<p>  <em>如果说<strong>类是从</strong>一堆<strong>对象</strong>中抽取相同的内容而来的，那么<strong>抽象类</strong>就<strong>是从</strong>一堆<strong>类</strong>中抽取相同的内容而来的，内容包括数据属性和函数属性。</em></p>
+<p>　 <em>比如我们有香蕉的类，有苹果的类，有桃子的类，从这些类抽取相同的内容就是水果这个抽象的类，你吃水果时，要么是吃一个具体的香蕉，要么是吃一个具体的桃子。。。。。。你永远无法吃到一个叫做水果的东西。</em></p>
+<p>  <em>从设计角度去看，如果类是从现实对象抽象而来的，那么抽象类就是基于类抽象而来的。</em></p>
+<p>　 <em>从实现角度来看，抽象类与普通类的不同之处在于：抽象类中有抽象方法，该类不能被实例化，只能被继承，且子类必须实现抽象方法。这一点与接口有点类似，但其实是不同的，即将揭晓答案</em></p>
+<p><strong><em>在python中实现抽象类</em></strong></p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> View Code</p>
+<h3 id="抽象类与接口类-1"><a href="#抽象类与接口类-1" class="headerlink" title="抽象类与接口类"></a>抽象类与接口类</h3><p><em>抽象类的本质还是类，指的是一组类的相似性，包括数据属性（如all_type）和函数属性（如read、write），而接口只强调函数属性的相似性。</em></p>
+<p><strong><em>抽象类是一个介于类和接口直接的一个概念，同时具备类和接口的部分特性，可以用来实现归一化设计</em></strong> </p>
+<p>在python中，并没有接口类这种东西，即便不通过专门的模块定义接口，我们也应该有一些基本的概念。</p>
+<h4 id="1-多继承问题"><a href="#1-多继承问题" class="headerlink" title="1.多继承问题"></a>1.多继承问题</h4><p>在继承抽象类的过程中，我们应该尽量避免多继承；<br>而在继承接口的时候，我们反而鼓励你来多继承接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">接口隔离原则：</span><br><span class="line">使用多个专门的接口，而不使用单一的总接口。即客户端不应该依赖那些不需要的接口。</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-方法的实现"><a href="#2-方法的实现" class="headerlink" title="2.方法的实现"></a>2.方法的实现</h4><p>在抽象类中，我们可以对一些抽象方法做出基础实现；<br>而在接口类中，任何方法都只是一种规范，具体的功能需要子类实现</p>
+<h3 id="钻石继承"><a href="#钻石继承" class="headerlink" title="钻石继承"></a><strong>钻石继承</strong></h3><h4 id="继承顺序"><a href="#继承顺序" class="headerlink" title="继承顺序"></a><strong>继承顺序</strong></h4><p><img src="https://images2017.cnblogs.com/blog/827651/201708/827651-20170812154958413-730706385.png" alt="img"></p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> 继承顺序</p>
+<h4 id="继承原理"><a href="#继承原理" class="headerlink" title="继承原理"></a><strong>继承原理</strong></h4><p>python到底是如何实现继承的，对于你定义的每一个类，python会计算出一个方法解析顺序(MRO)列表，这个MRO列表就是一个简单的所有基类的线性顺序列表，例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; F.mro() #等同于F.__mro__</span><br><span class="line">[&lt;class &#39;__main__.F&#39;&gt;, &lt;class &#39;__main__.D&#39;&gt;, &lt;class &#39;__main__.B&#39;&gt;, &lt;class &#39;__main__.E&#39;&gt;, &lt;class &#39;__main__.C&#39;&gt;, &lt;class &#39;__main__.A&#39;&gt;, &lt;class &#39;object&#39;&gt;]</span><br></pre></td></tr></table></figure>
+
+
+
+<p>为了实现继承,python会在MRO列表上从左到右开始查找基类,直到找到第一个匹配这个属性的类为止。<br>而这个MRO列表的构造是通过一个C3线性化算法来实现的。我们不去深究这个算法的数学原理,它实际上就是合并所有父类的MRO列表并遵循如下三条准则:<br>1.子类会先于父类被检查<br>2.多个父类会根据它们在列表中的顺序被检查<br>3.如果对下一个类存在两个合法的选择,选择第一个父类</p>
+<h3 id="继承小结"><a href="#继承小结" class="headerlink" title="继承小结"></a><strong>继承小结</strong></h3><h4 id="继承的作用"><a href="#继承的作用" class="headerlink" title="继承的作用"></a>继承的作用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">减少代码的重用</span><br><span class="line">提高代码可读性</span><br><span class="line">规范编程模式</span><br></pre></td></tr></table></figure>
+
+<h4 id="几个名词"><a href="#几个名词" class="headerlink" title="几个名词"></a>几个名词</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">抽象：抽象即抽取类似或者说比较像的部分。是一个从具题到抽象的过程。</span><br><span class="line">继承：子类继承了父类的方法和属性</span><br><span class="line">派生：子类在父类方法和属性的基础上产生了新的方法和属性</span><br></pre></td></tr></table></figure>
+
+<h4 id="抽象类与接口类-2"><a href="#抽象类与接口类-2" class="headerlink" title="抽象类与接口类"></a>抽象类与接口类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.多继承问题</span><br><span class="line">在继承抽象类的过程中，我们应该尽量避免多继承；</span><br><span class="line">而在继承接口的时候，我们反而鼓励你来多继承接口</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">2.方法的实现</span><br><span class="line">在抽象类中，我们可以对一些抽象方法做出基础实现；</span><br><span class="line">而在接口类中，任何方法都只是一种规范，具体的功能需要子类实现</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="钻石继承-1"><a href="#钻石继承-1" class="headerlink" title="钻石继承"></a><strong>钻石继承</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">新式类：广度优先</span><br><span class="line">经典类：深度优先</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><h3 id="多态-1"><a href="#多态-1" class="headerlink" title="多态"></a><strong>多态</strong></h3><p>多态指的是一类事物有多种形态</p>
+<p>动物有多种形态：人，狗，猪</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import abc</span><br><span class="line">class Animal(metaclass&#x3D;abc.ABCMeta): #同一类事物:动物</span><br><span class="line">    @abc.abstractmethod</span><br><span class="line">    def talk(self):</span><br><span class="line">        pass</span><br><span class="line"></span><br><span class="line">class People(Animal): #动物的形态之一:人</span><br><span class="line">    def talk(self):</span><br><span class="line">        print(&#39;say hello&#39;)</span><br><span class="line"></span><br><span class="line">class Dog(Animal): #动物的形态之二:狗</span><br><span class="line">    def talk(self):</span><br><span class="line">        print(&#39;say wangwang&#39;)</span><br><span class="line"></span><br><span class="line">class Pig(Animal): #动物的形态之三:猪</span><br><span class="line">    def talk(self):</span><br><span class="line">        print(&#39;say aoao&#39;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>文件有多种形态：文本文件，可执行文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import abc</span><br><span class="line">class File(metaclass&#x3D;abc.ABCMeta): #同一类事物:文件</span><br><span class="line">    @abc.abstractmethod</span><br><span class="line">    def click(self):</span><br><span class="line">        pass</span><br><span class="line"></span><br><span class="line">class Text(File): #文件的形态之一:文本文件</span><br><span class="line">    def click(self):</span><br><span class="line">        print(&#39;open file&#39;)</span><br><span class="line"></span><br><span class="line">class ExeFile(File): #文件的形态之二:可执行文件</span><br><span class="line">    def click(self):</span><br><span class="line">        print(&#39;execute file&#39;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h3 id="多态性"><a href="#多态性" class="headerlink" title="多态性"></a><strong>多态性</strong></h3><p><strong>一 什么是多态动态绑定（在继承的背景下使用时，有时也称为多态性）</strong></p>
+<p><strong>多态性是指在不考虑实例类型的情况下使用实例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">在面向对象方法中一般是这样表述多态性：</span><br><span class="line">向不同的对象发送同一条消息（！！！obj.func():是调用了obj的方法func，又称为向obj发送了一条消息func），不同的对象在接收时会产生不同的行为（即方法）。</span><br><span class="line">也就是说，每个对象可以用自己的方式去响应共同的消息。所谓消息，就是调用函数，不同的行为就是指不同的实现，即执行不同的函数。</span><br><span class="line"></span><br><span class="line">比如：老师.下课铃响了（），学生.下课铃响了()，老师执行的是下班操作，学生执行的是放学操作，虽然二者消息一样，但是执行的效果不同</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p><strong>多态性</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">peo&#x3D;People()</span><br><span class="line">dog&#x3D;Dog()</span><br><span class="line">pig&#x3D;Pig()</span><br><span class="line"></span><br><span class="line">#peo、dog、pig都是动物,只要是动物肯定有talk方法</span><br><span class="line">#于是我们可以不用考虑它们三者的具体是什么类型,而直接使用</span><br><span class="line">peo.talk()</span><br><span class="line">dog.talk()</span><br><span class="line">pig.talk()</span><br><span class="line"></span><br><span class="line">#更进一步,我们可以定义一个统一的接口来使用</span><br><span class="line">def func(obj):</span><br><span class="line">    obj.talk()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p><strong>鸭子类型</strong></p>
+<p>逗比时刻：</p>
+<p>　　Python崇尚鸭子类型，即‘如果看起来像、叫声像而且走起路来像鸭子，那么它就是鸭子’</p>
+<p>python程序员通常根据这种行为来编写程序。例如，如果想编写现有对象的自定义版本，可以继承该对象</p>
+<p>也可以创建一个外观和行为像，但与它无任何关系的全新对象，后者通常用于保存程序组件的松耦合度。</p>
+<p>例1：利用标准库中定义的各种‘与文件类似’的对象，尽管这些对象的工作方式像文件，但他们没有继承内置文件对象的方法</p>
+<p>例2：序列类型有多种形态：字符串，列表，元组，但他们直接没有直接的继承关系</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> 例子</p>
+<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p>【封装】</p>
+<p>​     隐藏对象的属性和实现细节，仅对外提供公共访问方式。</p>
+<p>【好处】 </p>
+<p>\1. 将变化隔离； </p>
+<p>\2. 便于使用；</p>
+<p>\3. 提高复用性； </p>
+<p>\4. 提高安全性；</p>
+<p>【封装原则】</p>
+<p>   \1. 将不需要对外提供的内容都隐藏起来；</p>
+<p>   \2. 把属性都隐藏，提供公共方法对其访问。</p>
+<h3 id="私有变量和私有方法"><a href="#私有变量和私有方法" class="headerlink" title="私有变量和私有方法"></a><strong>私有变量和私有方法</strong></h3><p><strong><em>在python中用双下划线开头的方式将属性隐藏起来（设置成私有的）</em></strong></p>
+<h4 id="私有变量"><a href="#私有变量" class="headerlink" title="私有变量"></a>私有变量</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#其实这仅仅这是一种变形操作</span><br><span class="line">#类中所有双下划线开头的名称如__x都会自动变形成：_类名__x的形式：</span><br><span class="line"></span><br><span class="line">class A:</span><br><span class="line">    __N&#x3D;0 #类的数据属性就应该是共享的,但是语法上是可以把类的数据属性设置成私有的如__N,会变形为_A__N</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.__X&#x3D;10 #变形为self._A__X</span><br><span class="line">    def __foo(self): #变形为_A__foo</span><br><span class="line">        print(&#39;from A&#39;)</span><br><span class="line">    def bar(self):</span><br><span class="line">        self.__foo() #只有在类内部才可以通过__foo的形式访问到.</span><br><span class="line"></span><br><span class="line">#A._A__N是可以访问到的，即这种操作并不是严格意义上的限制外部访问，仅仅只是一种语法意义上的变形</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><strong>这种自动变形的特点：</strong></p>
+<p><strong>1.类中定义的**</strong><strong>x只能在内部使用，如self.</strong>x，*<em>\</em>*引用的就是变形的结果**<em>\</em>。**</p>
+<p><strong><em>\</em>2.这种变形其实正是针对外部的变形\</strong>*<em>，在外部是无法通过__x这个名字访问到的。***</em></p>
+<p><strong>3.在子类定义的__x不会覆盖在\</strong>父类定义的<strong>x，因为子类中变形成了：_子类名</strong>x,而父类中变形成了：_父类名__x，即双下滑线开头的属性在继承给子类时，子类是无法覆盖的。****</p>
+<p>这种变形需要注意的问题是：</p>
+<p><strong><em>1.这种机制也并没有真正意义上限制我们从外部直接访问属性，知道了类名和属性名就可以拼出名字：_类名<strong>属性，然后就可以访问了，如a._A</strong>N</em></strong></p>
+<p><strong><em>2.变形的过程只在类的内部生效,在定义后的赋值操作，不会变形</em></strong></p>
+<p><em><img src="https://images2017.cnblogs.com/blog/827651/201708/827651-20170812175039570-723193202.png" alt="img"></em></p>
+<h4 id="私有方法"><a href="#私有方法" class="headerlink" title="私有方法"></a>私有方法</h4><p><strong><em>3.在继承中，父类如果不想让子类覆盖自己的方法，可以将方法定义为私有的</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#正常情况</span><br><span class="line">&gt;&gt;&gt; class A:</span><br><span class="line">...     def fa(self):</span><br><span class="line">...         print(&#39;from A&#39;)</span><br><span class="line">...     def test(self):</span><br><span class="line">...         self.fa()</span><br><span class="line">... </span><br><span class="line">&gt;&gt;&gt; class B(A):</span><br><span class="line">...     def fa(self):</span><br><span class="line">...         print(&#39;from B&#39;)</span><br><span class="line">... </span><br><span class="line">&gt;&gt;&gt; b&#x3D;B()</span><br><span class="line">&gt;&gt;&gt; b.test()</span><br><span class="line">from B</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">#把fa定义成私有的，即__fa</span><br><span class="line">&gt;&gt;&gt; class A:</span><br><span class="line">...     def __fa(self): #在定义时就变形为_A__fa</span><br><span class="line">...         print(&#39;from A&#39;)</span><br><span class="line">...     def test(self):</span><br><span class="line">...         self.__fa() #只会与自己所在的类为准,即调用_A__fa</span><br><span class="line">... </span><br><span class="line">&gt;&gt;&gt; class B(A):</span><br><span class="line">...     def __fa(self):</span><br><span class="line">...         print(&#39;from B&#39;)</span><br><span class="line">... </span><br><span class="line">&gt;&gt;&gt; b&#x3D;B()</span><br><span class="line">&gt;&gt;&gt; b.test()</span><br><span class="line">from A</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h3 id="封装与扩展性"><a href="#封装与扩展性" class="headerlink" title="封装与扩展性"></a><strong>封装与扩展性</strong></h3><p><em>封装在于明确区分内外，使得类实现者可以修改封装内的东西而不影响外部调用者的代码；而外部使用用者只知道一个接口(函数)，只要接口（函数）名、参数不变，使用者的代码永远无需改变。这就提供一个良好的合作基础——或者说，只要接口这个基础约定不变，则代码改变不足为虑。</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#类的设计者</span><br><span class="line">class Room:</span><br><span class="line">    def __init__(self,name,owner,width,length,high):</span><br><span class="line">        self.name&#x3D;name</span><br><span class="line">        self.owner&#x3D;owner</span><br><span class="line">        self.__width&#x3D;width</span><br><span class="line">        self.__length&#x3D;length</span><br><span class="line">        self.__high&#x3D;high</span><br><span class="line">    def tell_area(self): #对外提供的接口，隐藏了内部的实现细节，此时我们想求的是面积</span><br><span class="line">        return self.__width * self.__length</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#使用者</span><br><span class="line">&gt;&gt;&gt; r1&#x3D;Room(&#39;卧室&#39;,&#39;egon&#39;,20,20,20)</span><br><span class="line">&gt;&gt;&gt; r1.tell_area() #使用者调用接口tell_area</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#类的设计者，轻松的扩展了功能，而类的使用者完全不需要改变自己的代码</span><br><span class="line">class Room:</span><br><span class="line">    def __init__(self,name,owner,width,length,high):</span><br><span class="line">        self.name&#x3D;name</span><br><span class="line">        self.owner&#x3D;owner</span><br><span class="line">        self.__width&#x3D;width</span><br><span class="line">        self.__length&#x3D;length</span><br><span class="line">        self.__high&#x3D;high</span><br><span class="line">    def tell_area(self): #对外提供的接口，隐藏内部实现，此时我们想求的是体积,内部逻辑变了,只需求修该下列一行就可以很简答的实现,而且外部调用感知不到,仍然使用该方法，但是功能已经变了</span><br><span class="line">        return self.__width * self.__length * self.__high</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#对于仍然在使用tell_area接口的人来说，根本无需改动自己的代码，就可以用上新功能</span><br><span class="line">&gt;&gt;&gt; r1.tell_area()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h3 id="property属性"><a href="#property属性" class="headerlink" title="property属性"></a><strong>property属性</strong></h3><p><strong>什么是特性property</strong></p>
+<p><em>property是一种特殊的属性，访问它时会执行一段功能（函数）然后返回值</em></p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> 例一</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> View Code</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> 例二：圆的周长和面积</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#注意：此时的特性area和perimeter不能被赋值</span><br><span class="line">c.area&#x3D;3 #为特性area赋值</span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line">抛出异常:</span><br><span class="line">AttributeError: can&#39;t set attribute</span><br><span class="line">&#39;&#39;&#39;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>为什么要用property</strong></p>
+<p>将一个类的函数定义成特性以后，对象再去使用的时候obj.name,根本无法察觉自己的name是执行了一个函数然后计算出来的，这种特性的使用方式<strong>遵循了统一访问的原则</strong></p>
+<p>除此之外，看下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ps：面向对象的封装有三种方式:</span><br><span class="line">【public】</span><br><span class="line">这种其实就是不封装,是对外公开的</span><br><span class="line">【protected】</span><br><span class="line">这种封装方式对外不公开,但对朋友(friend)或者子类(形象的说法是“儿子”,但我不知道为什么大家 不说“女儿”,就像“parent”本来是“父母”的意思,但中文都是叫“父类”)公开</span><br><span class="line">【private】</span><br><span class="line">这种封装对谁都不公开</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>python并没有在语法上把它们三个内建到自己的class机制中，在C++里一般会将所有的所有的数据都设置为私有的，然后提供set和get方法（接口）去设置和获取，在python中通过property方法可以实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Foo:</span><br><span class="line">    def __init__(self,val):</span><br><span class="line">        self.__NAME&#x3D;val #将所有的数据属性都隐藏起来</span><br><span class="line"></span><br><span class="line">    @property</span><br><span class="line">    def name(self):</span><br><span class="line">        return self.__NAME #obj.name访问的是self.__NAME(这也是真实值的存放位置)</span><br><span class="line"></span><br><span class="line">    @name.setter</span><br><span class="line">    def name(self,value):</span><br><span class="line">        if not isinstance(value,str):  #在设定值之前进行类型检查</span><br><span class="line">            raise TypeError(&#39;%s must be str&#39; %value)</span><br><span class="line">        self.__NAME&#x3D;value #通过类型检查后,将值value存放到真实的位置self.__NAME</span><br><span class="line"></span><br><span class="line">    @name.deleter</span><br><span class="line">    def name(self):</span><br><span class="line">        raise TypeError(&#39;Can not delete&#39;)</span><br><span class="line"></span><br><span class="line">f&#x3D;Foo(&#39;egon&#39;)</span><br><span class="line">print(f.name)</span><br><span class="line"># f.name&#x3D;10 #抛出异常&#39;TypeError: 10 must be str&#39;</span><br><span class="line">del f.name #抛出异常&#39;TypeError: Can not delete&#39;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>一个静态属性property本质就是实现了get，set，delete三种方法</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> View Code</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="img"> View Code</p>
+<p>怎么用？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">class Goods:</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        # 原价</span><br><span class="line">        self.original_price &#x3D; 100</span><br><span class="line">        # 折扣</span><br><span class="line">        self.discount &#x3D; 0.8</span><br><span class="line"></span><br><span class="line">    @property</span><br><span class="line">    def price(self):</span><br><span class="line">        # 实际价格 &#x3D; 原价 * 折扣</span><br><span class="line">        new_price &#x3D; self.original_price * self.discount</span><br><span class="line">        return new_price</span><br><span class="line"></span><br><span class="line">    @price.setter</span><br><span class="line">    def price(self, value):</span><br><span class="line">        self.original_price &#x3D; value</span><br><span class="line"></span><br><span class="line">    @price.deleter</span><br><span class="line">    def price(self):</span><br><span class="line">        del self.original_price</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">obj &#x3D; Goods()</span><br><span class="line">obj.price         # 获取商品价格</span><br><span class="line">obj.price &#x3D; 200   # 修改商品原价</span><br><span class="line">print(obj.price)</span><br><span class="line">del obj.price     # 删除商品原价</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h3 id="classmethod"><a href="#classmethod" class="headerlink" title="classmethod"></a><strong>classmethod</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Classmethod_Demo():</span><br><span class="line">    role &#x3D; &#39;dog&#39;</span><br><span class="line"></span><br><span class="line">    @classmethod</span><br><span class="line">    def func(cls):</span><br><span class="line">        print(cls.role)</span><br><span class="line">Classmethod_Demo.func()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h3 id="staticmethod"><a href="#staticmethod" class="headerlink" title="staticmethod"></a><strong>staticmethod</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Staticmethod_Demo():</span><br><span class="line">    role &#x3D; &#39;dog&#39;</span><br><span class="line"></span><br><span class="line">    @staticmethod</span><br><span class="line">    def func():</span><br><span class="line">        print(&quot;当普通方法用&quot;)</span><br><span class="line">Staticmethod_Demo.func()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h1 id="面向对象的更多说明"><a href="#面向对象的更多说明" class="headerlink" title="面向对象的更多说明"></a>面向对象的更多说明</h1><h2 id="面向对象的软件开发"><a href="#面向对象的软件开发" class="headerlink" title="面向对象的软件开发"></a>面向对象的软件开发</h2><p>很多人在学完了python的class机制之后，遇到一个生产中的问题，还是会懵逼，这其实太正常了，因为任何程序的开发都是先设计后编程，python的class机制只不过是一种编程方式，如果你硬要拿着class去和你的问题死磕，变得更加懵逼都是分分钟的事，在以前，软件的开发相对简单，从任务的分析到编写程序，再到程序的调试，可以由一个人或一个小组去完成。但是随着软件规模的迅速增大，软件任意面临的问题十分复杂，需要考虑的因素太多，在一个软件中所产生的错误和隐藏的错误、未知的错误可能达到惊人的程度，这也不是在设计阶段就完全解决的。</p>
+<p>  所以软件的开发其实一整套规范，我们所学的只是其中的一小部分，一个完整的开发过程，需要明确每个阶段的任务，在保证一个阶段正确的前提下再进行下一个阶段的工作，称之为软件工程</p>
+<p>  面向对象的软件工程包括下面几个部：</p>
+<p><strong>1.面向对象分析（object oriented analysis ，OOA）</strong></p>
+<p>  软件工程中的系统分析阶段，要求分析员和用户结合在一起，对用户的需求做出精确的分析和明确的表述，从大的方面解析软件系统应该做什么，而不是怎么去做。面向对象的分析要按照面向对象的概念和方法，在对任务的分析中，从客观存在的事物和事物之间的关系，贵南出有关的对象（对象的‘特征’和‘技能’）以及对象之间的联系，并将具有相同属性和行为的对象用一个类class来标识。</p>
+<p>  建立一个能反映这是工作情况的需求模型，此时的模型是粗略的。</p>
+<p><strong>2 面向对象设计（object oriented design，OOD）</strong></p>
+<p>  根据面向对象分析阶段形成的需求模型，对每一部分分别进行具体的设计。</p>
+<p>  首先是类的设计，类的设计可能包含多个层次（利用继承与派生机制）。然后以这些类为基础提出程序设计的思路和方法，包括对算法的设计。</p>
+<p>  在设计阶段并不牵涉任何一门具体的计算机语言，而是用一种更通用的描述工具（如伪代码或流程图）来描述</p>
+<p><strong>3 面向对象编程（object oriented programming，OOP）</strong></p>
+<p>  根据面向对象设计的结果，选择一种计算机语言把它写成程序，可以是python</p>
+<p><strong>4 面向对象测试（object oriented test，OOT）</strong></p>
+<p>  在写好程序后交给用户使用前，必须对程序进行严格的测试，测试的目的是发现程序中的错误并修正它。</p>
+<p>  面向对的测试是用面向对象的方法进行测试，以类作为测试的基本单元。</p>
+<p><strong>5 面向对象维护（object oriendted soft maintenance，OOSM）</strong></p>
+<p>  正如对任何产品都需要进行售后服务和维护一样，软件在使用时也会出现一些问题，或者软件商想改进软件的性能，这就需要修改程序。</p>
+<p>  由于使用了面向对象的方法开发程序，使用程序的维护比较容易。</p>
+<p>  因为对象的封装性，修改一个对象对其他的对象影响很小，利用面向对象的方法维护程序，大大提高了软件维护的效率，可扩展性高。</p>
+<p>  在面向对象方法中，最早发展的肯定是面向对象编程(OOP),那时OOA和OOD都还没有发展起来，因此程序设计者为了写出面向对象的程序，还必须深入到分析和设计领域，尤其是设计领域，那时的OOP实际上包含了现在的OOD和OOP两个阶段，这对程序设计者要求比较高，许多人感到很难掌握。</p>
+<p>  现在设计一个大的软件，是严格按照面向对象软件工程的5个阶段进行的，这个5个阶段的工作不是由一个人从头到尾完成的，而是由不同的人分别完成，这样OOP阶段的任务就比较简单了。程序编写者只需要根据OOd提出的思路，用面向对象语言编写出程序既可。</p>
+<p>  在一个大型软件开发过程中，OOP只是很小的一个部分。</p>
+<p>  对于全栈开发的你来说，这五个阶段都有了，对于简单的问题，不必严格按照这个5个阶段进行，往往由程序设计者按照面向对象的方法进行程序设计，包括类的设计和程序的设计</p>
+<h2 id="几个概念的说明"><a href="#几个概念的说明" class="headerlink" title="几个概念的说明"></a>几个概念的说明</h2><p>1.面向对象的程序设计看起来高大上，所以我在编程时就应该保证通篇class，这样写出的程序一定是好的程序（面向对象只适合那些可扩展性要求比较高的场景）</p>
+<p>2.很多人喜欢说面向对象三大特性（这是从哪传出来的，封装，多态，继承？漏洞太多太多，好吧暂且称为三大特性），那么我在基于面向对象编程时，我一定要让我定义的类中完整的包含这三种特性，这样写肯定是好的程序</p>
+<p>好家伙，我说降龙十八掌有十八掌，那么你每次跟人干仗都要从第一掌打到第18掌这才显得你会了是么：面对敌人，你打到第三掌对方就已经倒下了，你说，不行，你给老子起来，老子还没有show完…</p>
+<p>3.类有类属性，实例有实例属性，所以我们在定义class时一定要定义出那么几个类属性，想不到怎么办，那就使劲的想，定义的越多越牛逼</p>
+<p>这就犯了一个严重的错误，程序越早面向对象，死的越早，为啥面向对象，因为我们要将数据与功能结合到一起，程序整体的结构都没有出来，或者说需要考虑的问题你都没有搞清楚个八九不离十，你就开始面向对象了，这就导致了，你在那里干想，自以为想通了，定义了一堆属性，结果后来又都用不到，或者想不通到底应该定义啥，那就一直想吧，想着想着就疯了。</p>
+<p>你见过哪家公司要开发一个软件，上来就开始写，肯定是频繁的开会讨论计划，请看第八节。</p>
+<h2 id="面向对象常用术语"><a href="#面向对象常用术语" class="headerlink" title="面向对象常用术语"></a>面向对象常用术语</h2><p><strong>抽象/实现</strong></p>
+<p>抽象指对现实世界问题和实体的本质表现,行为和特征建模,建立一个相关的子集,可以用于 绘程序结构,从而实现这种模型。抽象不仅包括这种模型的数据属性,还定义了这些数据的接口。</p>
+<p>对某种抽象的实现就是对此数据及与之相关接口的现实化(realization)。现实化这个过程对于客户 程序应当是透明而且无关的。 </p>
+<p><strong>封装/接口</strong></p>
+<p>封装描述了对数据/信息进行隐藏的观念,它对数据属性提供接口和访问函数。通过任何客户端直接对数据的访问,无视接口,与封装性都是背道而驰的,除非程序员允许这些操作。作为实现的 一部分,客户端根本就不需要知道在封装之后,数据属性是如何组织的。在Python中,所有的类属性都是公开的,但名字可能被“混淆”了,以阻止未经授权的访问,但仅此而已,再没有其他预防措施了。这就需要在设计时,对数据提供相应的接口,以免客户程序通过不规范的操作来存取封装的数据属性。</p>
+<p>注意：封装绝不是等于“把不想让别人看到、以后可能修改的东西用private隐藏起来”</p>
+<p><strong>真正的封装是，经过深入的思考，做出良好的抽象，给出“完整且最小”的接口，并使得内部细节可以对外透明</strong></p>
+<p><strong>（注意：对外透明</strong>的意思是<strong>，</strong>外部调用者可以顺利的得到自己想要的任何功能，<strong>完全意识不到内部细节的存在）</strong></p>
+<p><strong>合成</strong></p>
+<p>合成扩充了对类的 述,使得多个不同的类合成为一个大的类,来解决现实问题。合成 述了 一个异常复杂的系统,比如一个类由其它类组成,更小的组件也可能是其它的类,数据属性及行为, 所有这些合在一起,彼此是“有一个”的关系。</p>
+<p><strong>派生/继承/继承结构</strong></p>
+<p>派生描述了子类衍生出新的特性,新类保留已存类类型中所有需要的数据和行为,但允许修改或者其它的自定义操作,都不会修改原类的定义。<br>继承描述了子类属性从祖先类继承这样一种方式<br>继承结构表示多“代”派生,可以述成一个“族谱”,连续的子类,与祖先类都有关系。</p>
+<p><strong>泛化/特化</strong></p>
+<p>基于继承<br>泛化表示所有子类与其父类及祖先类有一样的特点。<br>特化描述所有子类的自定义,也就是,什么属性让它与其祖先类不同。</p>
+<p><strong>多态与多态性</strong></p>
+<p>多态指的是同一种事物的多种状态：水这种事物有多种不同的状态：冰，水蒸气</p>
+<p>多态性的概念指出了对象如何通过他们共同的属性和动作来操作及访问,而不需考虑他们具体的类。</p>
+<p>冰，水蒸气，都继承于水，它们都有一个同名的方法就是变成云，但是冰.变云(),与水蒸气.变云()是截然不同的过程，虽然调用的方法都一样</p>
+<p><strong>自省/反射</strong></p>
+<p>自省也称作反射，这个性质展示了某对象是如何在运行期取得自身信息的。如果传一个对象给你,你可以查出它有什么能力,这是一项强大的特性。如果Python不支持某种形式的自省功能,dir和type内建函数,将很难正常工作。还有那些特殊属性,像<strong>dict</strong>,<strong>name</strong>及<strong>doc</strong></p>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/06/13/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%88%E9%9A%BE%EF%BC%89/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2020/06/13/Python-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Python 内置函数
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/06/13/python%E5%87%BD%E6%95%B0/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">python函数</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: '9KjOP8UIrxMNeout6rbPNABM-gzGzoHsz',
+        app_key: 'p8jYOMTugImVVUXFa52wB63J',
+        path: window.location.pathname,
+        notify: 'true',
+        verify: 'true',
+        avatar: 'mp',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+
+
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2020
+        广外编程社
+      </li>
+      <li>
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <span>
+  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
+  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
+</span>
+        
+      </li>
+      
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://v1.cnzz.com/z_stat.php?id=1278929797&amp;web_id=1278929797'></script>
+        
+      </li>
+    </ul>
+  </div>
+
+
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv" style='display:none'>
+                本站访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+</footer>
+
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("08/4/2020 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+      <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    <aside class="sidebar">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/logo.png" alt="广外编程社官网"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="https://gw-lazybones.github.io/2020/05/30/%EF%BC%88%E7%BD%AE%E9%A1%B6%EF%BC%89GZFLS%20LazyBones%20%E7%AE%80%E4%BB%8B" target="_blank" rel="noopener">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>就当交个团费吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+      strings: ['广外编程社官网', '提供Python，C++；hexo等资料', '提供Python，C++；hexo等资料'],
+      startDelay: 0,
+      typeSpeed: 200,
+      loop: true,
+      backSpeed: 100,
+      showCursor: true
+    });
+  } catch (err) {
+  }
+
+</script>
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    onClick: (e) => {
+      $('.toc-link').removeClass('is-active-link');
+      $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+      $(e.target.hash).scrollIntoView();
+      return false;
+    }
+  });
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/js/ayer.js"></script>
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true
+  }
+</script>
+
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="86"
+        src="//music.163.com/outchain/player?type=2&id=22707008&auto=1&height=66"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
+
+<!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/love.js"></script>
+
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='1.4' zIndex="-4" count="185" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+<!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+

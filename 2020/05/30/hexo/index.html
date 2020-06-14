@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="广外编程社" />
+   
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    hexo |  广外编程社官网
+  </title>
+  <meta name="generator" content="hexo-theme-yilia-plus">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="广外编程社官网" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-hexo" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  hexo
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/05/30/hexo/" class="article-date">
+  <time datetime="2020-05-30T01:46:10.000Z" itemprop="datePublished">2020-05-30</time>
+</a>
+      
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">2.7k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">10分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <p>你是否想过自己开发一个网站？你是否想过免费获得一个自己的域名？hexo只需1分钟就可以实现这个目标**</p>
+<p>民间有传言，没有手撸过个人网站的程序员不是一个好的前端开发工程师，可是！hexo完全免费，hexo你直接带回家。通过hexo，可以快速构建个人博客，并搭建到<br>github 上供他人访问，三秒真男人，我们开始吧！</p>
+<p>Hexo是一个快速、简洁且高效的博客框架。Hexo 使用<br>Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。即把用户的markdown文件，按照指定的主题解析成静态网页。</p>
+<p>先上源代码：</p>
+<p>hexo init</p>
+<p>hexo s</p>
+<p>#如果里面有玄学因素就不怪我了（此代码不包含环境以及相关的一些npm下载的东西）</p>
+<p>正文开始：</p>
+<p>（一些环境可能有些同学还不清楚，我就重头开始讲）</p>
+<ol>
+<li><strong>安装Git Bash</strong></li>
+</ol>
+<p>下载地址：<a href="https://git-for-windows.github.io" target="_blank" rel="noopener">https://git-for-windows.github.io</a></p>
+<p>安装步骤：双击下载好的exe文件，一路next就好啦</p>
+<p><img src="https://pic.downk.cc/item/5ed1bdb1c2a9a83be5e5c687.png" alt="git version"></p>
+<p>然后你就可以在这里发挥你的聪明才智了</p>
+<ol>
+<li><strong>安装NodeJs</strong></li>
+</ol>
+<p>Hexo是基于nodeJS环境的静态博客，里面的npm工具很有用啊，所以还是老老实实把这玩意儿装了吧</p>
+<p>地址：<a href="https://nodejs.org/en" target="_blank" rel="noopener">https://nodejs.org/en</a> (说明：LTS为长期支持版，Current为当前最新版)</p>
+<p>安装步骤：反正下载好msi文件后，双击打开安装，也是一路next，不过在Custom<br>Setup这一步记得选 Add to PATH ,这样你就不用自己去配置电脑上环境变量了</p>
+<p><img src="https://pic.downk.cc/item/5ed1bdb0c2a9a83be5e5c67e.png" alt="node-version"></p>
+<p>又到自由发挥的时候了</p>
+<ol>
+<li><strong>安装hexo</strong></li>
+</ol>
+<p>看到这么多安装，千万不要紧张，小哥哥小姐姐们一定要稳住，别怕，因为后面的东西都是在gitbash中用npm工具安装就好了。</p>
+<p>先创建一个文件夹（用来存放所有blog的东西），然后<strong>cd</strong>到该文件夹下。</p>
+<p>安装hexo命令：npm i -g hexo</p>
+<p><strong>（这里说一下，nmp的速度太慢了，国内的镜像有很多的bug，所以用cnpm——淘宝镜像）</strong></p>
+<p><strong>cnpm安装：</strong></p>
+<p>命令行输入：npm install cnpm -g –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p>
+<p>（就这么简单。。。然后以后输入的时候npm就在前面加一个c就OK）</p>
+<p>初始化命令：hexo init ，初始化完成之后打开所在的文件夹可以看到以下文件：</p>
+<p><img src="https://pic.downk.cc/item/5ed1bdbdc2a9a83be5e5d650.png" alt="myblog"></p>
+<p>解释一下：</p>
+<p>node_modules：是依赖包</p>
+<p>public：存放的是生成的页面</p>
+<p>scaffolds：命令生成文章等的模板</p>
+<p>source：用命令创建的各种文章</p>
+<p>themes：主题</p>
+<p>_config.yml：整个博客的配置</p>
+<blockquote>
+<p>  db.json：source解析所得到的</p>
+</blockquote>
+<p>package.json：项目所需模块项目的配置信息</p>
+<p>做好这些前置工作之后接下来的就是各种配配配置了。</p>
+<p><strong>一些hexo常用指令</strong></p>
+<p>（有时候会因为一些插件的原因冲突，自行百度就好或者cmd输入hexo看看一共有什么命令）</p>
+<p># 本地预览</p>
+<p>hexo s</p>
+<p># 根据配置文件和主题，将 root/source/_post 下的 markdown 文件生成 html 内容</p>
+<p>hexo g</p>
+<p># 清空 hexo g 生成的内容，内容在 root/public</p>
+<p>hexo clean</p>
+<p># 将本地生成 url 链接推送到百度，让百度爬取其中的内容进行索引</p>
+<p>hexo d</p>
+<p># 根据 标题名称 在root/source/_post 生成 markdown 文件</p>
+<p>hexo new post 标题名称</p>
+<p>（在一些编程语言中”#”也代表着注释，文件<strong>_config.yml</strong>里面的#就表示注释）</p>
+<ol>
+<li><strong>部署</strong></li>
+</ol>
+<p>没账号的创建账号（这我不多说），有账号的看下面</p>
+<p>创建一个repo，名称为yourname.github.io,<br>其中yourname是你的github名称，按照这个规则创建才有用哦，如下：</p>
+<p><img src="https://pic.downk.cc/item/5ed1bdc1c2a9a83be5e5db52.png" alt="new-repo"></p>
+<p><img src="https://pic.downk.cc/item/5ed1beedc2a9a83be5e771d6.png" alt="create-repo"></p>
+<p>回到gitbash中，配置github账户信息（YourName和YourEail都替换成你自己的）：</p>
+<p><img src="https://pic.downk.cc/item/5ed1bdc1c2a9a83be5e5db68.png" alt="username"></p>
+<p><img src="https://pic.downk.cc/item/5ed1bdb0c2a9a83be5e5c681.png" alt="email"></p>
+<p>创建SSH</p>
+<p>在gitbash中输入：ssh-keygen -t rsa -C<br>“youremail@example.com，生成ssh。然后按下图的方式找到id_rsa.pub文件的内容。</p>
+<p><img src="https://pic.downk.cc/item/5ed1bdc1c2a9a83be5e5db60.png" alt="ssh-key"></p>
+<p>将上面获取的ssh放到github中：</p>
+<p><img src="https://pic.downk.cc/item/5ed1bdb0c2a9a83be5e5c679.png" alt="settings"></p>
+<p><img src="https://pic.downk.cc/item/5ed1bdbdc2a9a83be5e5d656.png" alt="ssh-key"></p>
+<p>添加一个 New SSH key ，title随便取，key就填刚刚那一段。</p>
+<p>在gitbash中验证是否添加成功：ssh -T git@github.com</p>
+<p>完成下一步你就成功啦！</p>
+<p><strong>5.一步之遥</strong></p>
+<p>用编辑器打开你的blog项目，修改<strong>_config.yml</strong>文件的一些配置(冒号之后都是有一个半角空格的)：</p>
+<p>deploy:</p>
+<p>​    type: git</p>
+<p>​    repo: <a href="https://github.com/YourgithubName/YourgithubName.github.io.git" target="_blank" rel="noopener">https://github.com/YourgithubName/YourgithubName.github.io.git</a></p>
+<p>​    branch: master</p>
+<p>回到gitbash/cmd中，进入你的blog目录，分别执行以下命令：</p>
+<p>​    hexo clean</p>
+<p>​    hexo generate</p>
+<p>​    hexo server</p>
+<p>​    #hexo clean 不是必要的，有时候需要加一些自己的东西，如果hexo<br>​        clean后自己的东西就不见了，如果自己的东西，那就推荐hexo clean</p>
+<p>注：hexo 3.0把服务器独立成个别模块，需要单独安装：npm i hexo-server</p>
+<p>输入完hexo server后，打开浏览器输入：<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
+<p>（如果该端口有其他的东西，可以调到其他的端口，自行百度，官网有，我就不在这多说了）</p>
+<p><strong>到这一步，你就可以搭建一个自己的内网的网站</strong></p>
+<p><strong>上传到github</strong></p>
+<p>先安装一波：npm install hexo-deployer-git<br>–save（这样才能将你写好的文章部署到github服务器上并让别人浏览到）</p>
+<p>执行命令(建议每次都按照如下步骤部署)：</p>
+<p>​    hexo clean</p>
+<p>​    hexo generate</p>
+<p>​    hexo deploy</p>
+<p>注意deploy的过程中要输入你的username及passward。如下：</p>
+<p><img src="https://pic.downk.cc/item/5ed1bdc1c2a9a83be5e5db56.png" alt="deploy"></p>
+<p>在浏览器中输入<strong><a href="http://yourgithubname.github.io" target="_blank" rel="noopener">http://yourgithubname.github.io</a></strong>就可以看到你的个人博客啦，是不是很兴奋！</p>
+<p>感觉gitbash中东西太多的时候输入clear命令清空。</p>
+<p><strong>（部署完后大概3分钟左右就可以访问到新的内容）</strong></p>
+<p><strong>6.优化</strong></p>
+<p><strong>一，coding（因为篇幅较长，我就不加图片，如果需要就找度娘或找我）</strong></p>
+<p>Coding与Github相似，都是基于Git的代码托管平台，GitHub大家应该都很熟悉，相对与Coding来说，GitHub面向英语系国家程序员，Coding面向中国程序猿，而且Coding的私有库可免费使用这是最大的区别。两者的用法和操作其实大同小异。（Coding的优势是服务器在国内，访问速度快，缺点是有时候有一些玄学的因素，域名无法控制。。。）</p>
+<p>新建仓库：</p>
+<ol>
+<li><p>打开coding主页，创建新项目</p>
+</li>
+<li><p>新建一个名为yourname.coding.me的项目，其中这里的yourname最好是coding注册时的username，等项目部署成功后它就是你博客的访问地址。如下所示coding可以创建私有仓库，GitHub中是要收费的。</p>
+</li>
+<li><p>开启Pages服务，开启后我们就可以通过<br>用户名+网站后缀来访问博客，而且还可以绑定域名通过固定域名来访问。进入项目-&gt;代码-&gt;Pages服务</p>
+</li>
+<li><p>在管理Git项目时，无论是GitHub还是Coding我们可以通过SSH、HTTPS两种方式来clone或者push代码，当使用HTTPS的方式来管理代码，每次操作时都需要验证用户名和密码；而使用SSH方式Push代码之前需要配置个人的SSH<br>key,这样就可以省掉繁琐的验证步骤。</p>
+</li>
+<li><p>当然，我们也可以选择通过HTTPS方式来进行项目的管理，那么请跳过SSH<br>key的配置步骤，直接阅读项目部署步骤的内容。</p>
+</li>
+<li><p>_config.yml文件的配置和GitHub大同小异，我不多说了</p>
+</li>
+</ol>
+<p><strong>二，主题</strong></p>
+<p>风格不喜欢？换之。</p>
+<p>这是 hexo<br>默认的主题，我们需要修改这个主题，那么我们可以去找一些符合我们个人爱好的一些主题<em>选</em>择一个自己喜欢的<br>Hexo 主题：<strong><a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></strong></p>
+<p>更换主题流程：下载主题 -&gt; 配置主题，以 xoxo 为例（不要想歪了！）</p>
+<p># 下载到themes文件夹下</p>
+<p>git clone <a href="https://github.com/KevinOfNeu/hexo-theme-xoxo" target="_blank" rel="noopener">https://github.com/KevinOfNeu/hexo-theme-xoxo</a> xoxo</p>
+<p># 修改 _config.yml 配置</p>
+<p>theme: xoxo</p>
+<p>很多的主题都会有一定的介绍，根据介绍摸索也可以的（我就是自己摸索的）</p>
+<p><strong>三，插件</strong></p>
+<p>Hexo中有很多优质的插件，具体可以在我做的社团网站欣赏：<strong>GW-Lazybones.github.io</strong></p>
+<p>里面有很多我认为优质的东西，比如说，二次元看板娘，音乐播放的实现，语法高亮的实现等等</p>
+<p><img src="https://pic.downk.cc/item/5ed1bdc1c2a9a83be5e5db5c.png" alt=""></p>
+<p><img src="https://pic.downk.cc/item/5ed1bdb0c2a9a83be5e5c674.png" alt=""></p>
+<p>插件推荐：hexo-generator-searchdb: 用于搜索</p>
+<p>hexo-generate-feed: 用于生成RSS订阅</p>
+<p>hexo-generator-index-pin-top: 用于文章置顶</p>
+<p>hexo-blog-encrypt：用于文章加密</p>
+<p>hexo-tag-aplayer：用于播放音乐</p>
+<p>hexo-tag-aplayer：用于播放音乐</p>
+<p>hexo-helper-live2d：二次元看板娘</p>
+<p>更多插件请见 hexo插件市场</p>
+<p><strong>四，其他</strong></p>
+<p>还有一些东西，比如说评论的接口，访问的统计，如何被百度等搜索引擎给收录等等，都可以单独拿出来讲，</p>
+<p>这常常会有很多很<strong>玄学</strong>的东西，如果遇到了一些<strong>bug</strong>我可能有一点帮助。</p>
+<p>其实绝大部分的东西在官网就可以解决，而且浏览<strong>hexo</strong>官网会有很多意想不到的发现，为自己的网站更加的完善</p>
+<p>如果有兴趣的可以加我<strong>qq：503404172 （直接在大群里也OK）</strong></p>
+<p>还有我们社团的新的网站：<a href="https://gw-lazybones.github.io" target="_blank" rel="noopener">https://gw-lazybones.github.io</a></p>
+<p>如果有Markdown特别感兴趣的同学可以和我联系（为社团网站添砖加瓦）</p>
+<p><strong>大家可以积极投稿，我们都会展示到社团网站的，因为我年纪小，刚刚做副社，所以有很多东西没有那么熟练，请各位谅解，并且提出有益的意见，谢谢。</strong></p>
+<p><strong>关于我：一个喜欢搞UE4的（复刻GW，结果发现我不是第一个。。。）</strong></p>
+<p><strong>会一点点C++，Python，一点点网页，知道一点点网安</strong></p>
+<p><strong>其实上面的部署可以自己写一个程序，用Windows.h就OK了（源码太简单，我就不打出来了）</strong></p>
+<p><strong>以后的社团活动通知会发在Q群上，每次课的知识都会发，请留意。</strong></p>
+<p><strong>UE4项目进展（以前项目的工程文件还没用拿到，所以重新开了一个）：</strong></p>
+<blockquote>
+<p>  模式是第一人称和第三人称，内网联机在技术上是可行的（暂时还没有弄，外网的以后再说吧），我用了光线追踪，最高画质，所以对配置的要求较高，（以后会搞画质调节相关的），现在UI还没有做，支持win7以上的64位系统，安装包800M左右，安装下来差不多1.4G，最低配置：i5-4，内存6G。推荐i5-7以上，内存8G不卡。</p>
+</blockquote>
+<p>（这纸还有挺多空位的如果想记就记‘亿’点点笔记吧）**</p>
+<p><strong>Attention：这张纸以后要用，所以请保留好，谢谢</strong></p>
+<p><strong>大家希望以后讲什么，可以在群里@我也可以私信</strong></p>
+<p><strong>在最后，祝大家的代码没有BUG</strong></p>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/05/30/hexo/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2020/05/30/%E6%9C%80%E5%85%A8%E7%9A%84Markdown%E8%AF%AD%E6%B3%95%E6%B1%87%E6%80%BB%E5%9C%A8%E8%BF%99%E9%87%8C/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            最全的Markdown语法汇总在这里
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/05/30/%E5%88%AB%E6%92%9E%E6%9F%B1%E5%AD%90/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">别撞柱子</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: '9KjOP8UIrxMNeout6rbPNABM-gzGzoHsz',
+        app_key: 'p8jYOMTugImVVUXFa52wB63J',
+        path: window.location.pathname,
+        notify: 'true',
+        verify: 'true',
+        avatar: 'mp',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+
+
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2020
+        广外编程社
+      </li>
+      <li>
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <span>
+  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
+  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
+</span>
+        
+      </li>
+      
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://v1.cnzz.com/z_stat.php?id=1278929797&amp;web_id=1278929797'></script>
+        
+      </li>
+    </ul>
+  </div>
+
+
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv" style='display:none'>
+                本站访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+</footer>
+
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("08/4/2020 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+      <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    <aside class="sidebar">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/logo.png" alt="广外编程社官网"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="https://gw-lazybones.github.io/2020/05/30/%EF%BC%88%E7%BD%AE%E9%A1%B6%EF%BC%89GZFLS%20LazyBones%20%E7%AE%80%E4%BB%8B" target="_blank" rel="noopener">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>就当交个团费吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+      strings: ['广外编程社官网', '提供Python，C++；hexo等资料', '提供Python，C++；hexo等资料'],
+      startDelay: 0,
+      typeSpeed: 200,
+      loop: true,
+      backSpeed: 100,
+      showCursor: true
+    });
+  } catch (err) {
+  }
+
+</script>
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    onClick: (e) => {
+      $('.toc-link').removeClass('is-active-link');
+      $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+      $(e.target.hash).scrollIntoView();
+      return false;
+    }
+  });
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/js/ayer.js"></script>
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true
+  }
+</script>
+
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="86"
+        src="//music.163.com/outchain/player?type=2&id=22707008&auto=1&height=66"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
+
+<!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/love.js"></script>
+
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='1.4' zIndex="-4" count="185" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+<!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+

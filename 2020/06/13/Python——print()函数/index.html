@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="广外编程社" />
+   
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    Python——print()函数 |  广外编程社官网
+  </title>
+  <meta name="generator" content="hexo-theme-yilia-plus">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="广外编程社官网" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-Python——print()函数" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Python——print()函数
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/06/13/Python%E2%80%94%E2%80%94print()%E5%87%BD%E6%95%B0/" class="article-date">
+  <time datetime="2020-06-13T09:26:10.000Z" itemprop="datePublished">2020-06-13</time>
+</a>
+      
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.6k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">6分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <p><strong>python版本：python3.5.1 ; IDE：pycharm2017.2</strong></p>
+<p><strong>目录</strong></p>
+<p><a href="https://blog.csdn.net/sinat_28576553/article/details/81154912#一.print()函数概述" target="_blank" rel="noopener">一、print()函数概述</a></p>
+<p><a href="https://blog.csdn.net/sinat_28576553/article/details/81154912#二、变量的输出" target="_blank" rel="noopener">二、变量的输出</a></p>
+<p><a href="https://blog.csdn.net/sinat_28576553/article/details/81154912#三、数据的格式化输出" target="_blank" rel="noopener">三、数据的格式化输出</a></p>
+<p>[3.1 %字符](<a href="https://blog.csdn.net/sinat_28576553/article/details/81154912#3.1" target="_blank" rel="noopener">https://blog.csdn.net/sinat_28576553/article/details/81154912#3.1</a> %字符)</p>
+<p>[3.2 最小字段宽度和精度](<a href="https://blog.csdn.net/sinat_28576553/article/details/81154912#3.2" target="_blank" rel="noopener">https://blog.csdn.net/sinat_28576553/article/details/81154912#3.2</a> 最小字段宽度和精度)</p>
+<p>[3.3 转换标志](<a href="https://blog.csdn.net/sinat_28576553/article/details/81154912#3.3" target="_blank" rel="noopener">https://blog.csdn.net/sinat_28576553/article/details/81154912#3.3</a> 转换标志)</p>
+<p>[3.4 格式字符归纳](<a href="https://blog.csdn.net/sinat_28576553/article/details/81154912#" target="_blank" rel="noopener">https://blog.csdn.net/sinat_28576553/article/details/81154912#</a> 3.4 格式字符归纳)</p>
+<p><a href="https://blog.csdn.net/sinat_28576553/article/details/81154912#四、换行与防止换行" target="_blank" rel="noopener">四、换行与防止换行</a></p>
+<hr>
+<h1 id="一、print-函数概述"><a href="#一、print-函数概述" class="headerlink" title="一、print()函数概述"></a><strong>一、print()函数概述</strong></h1><p><strong>print()</strong> 方法用于打印输出，是python中最常见的一个函数。</p>
+<p>该函数的语法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(*objects, sep=<span class="string">' '</span>, end=<span class="string">'\n'</span>, file=sys.stdout)</span><br></pre></td></tr></table></figure>
+
+<p>参数的具体含义如下：</p>
+<p>objects –表示输出的对象。输出多个对象时，需要用 , （逗号）分隔。</p>
+<p>sep – 用来间隔多个对象。</p>
+<p>end – 用来设定以什么结尾。默认值是换行符 \n，我们可以换成其他字符。</p>
+<p>file – 要写入的文件对象。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="number">1</span>)  <span class="comment">#数值类型可以直接输出</span></span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">运行结果如下</span></span><br><span class="line"><span class="string">1</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">"Hello World"</span>)  <span class="comment">#字符串类型可以直接输出</span></span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">运行结果如下：</span></span><br><span class="line"><span class="string">Hello World</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line">a=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">b=<span class="string">"Hello World"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(a, b)  <span class="comment">#可以一次输出多个对象，对象之间用逗号分隔</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">运行结果如下：</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">1 Hello World</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#如果直接输出字符串，而不是用对象表示的话，可以不使用逗号</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">"Duan"</span><span class="string">"Yixuan"</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"Duan"</span>,<span class="string">"Yixuan"</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">运行结果如下：</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">DuanYixuan</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Duan Yixuan</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">可知，不添加逗号分隔符，字符串之间没有间隔</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(<span class="string">"www"</span>, <span class="string">"snh48"</span>, <span class="string">"com"</span>, sep=<span class="string">"."</span>)  <span class="comment"># 设置间隔符</span></span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">运行结果如下：</span></span><br><span class="line"><span class="string">www.snh48.com</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="二、变量的输出"><a href="#二、变量的输出" class="headerlink" title="二、变量的输出"></a>二、变量的输出</h1><p>无论什么类型的数据，包括但不局限于：数值型，布尔型，列表变量，字典变量…都可以直接输出。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#例如：</span></span><br><span class="line"></span><br><span class="line">num = <span class="number">19</span></span><br><span class="line"></span><br><span class="line">print(num)    <span class="comment">#19  输出数值型变量</span></span><br><span class="line"></span><br><span class="line">str = <span class="string">'Duan Yixuan'</span></span><br><span class="line"></span><br><span class="line">print(str)  <span class="comment">#Duan Yixuan  输出字符串变量</span></span><br><span class="line"></span><br><span class="line">list = [<span class="number">1</span>,<span class="number">2</span>,<span class="string">'a'</span>]</span><br><span class="line"></span><br><span class="line">print(list)   <span class="comment">#[1, 2, 'a']  输出列表变量</span></span><br><span class="line"></span><br><span class="line">tuple = (<span class="number">1</span>,<span class="number">2</span>,<span class="string">'a'</span>)</span><br><span class="line"></span><br><span class="line">print(tuple)    <span class="comment">#(1, 2, 'a') 输出元组变量</span></span><br><span class="line"></span><br><span class="line">dict = &#123;<span class="string">'a'</span>:<span class="number">1</span>, <span class="string">'b'</span>:<span class="number">2</span>&#125;</span><br><span class="line"></span><br><span class="line">print(dict)   <span class="comment"># &#123;'a': 1, 'b': 2&#125; 输出字典变量</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="三、数据的格式化输出"><a href="#三、数据的格式化输出" class="headerlink" title="三、数据的格式化输出"></a>三、数据的格式化输出</h1><p>在C语言中，我们可以使用printf(“%-.4f”,a)之类的形式，实现数据的的格式化输出。</p>
+<p>在python中，我们同样可以实现数据的格式化输出。我们可以先看一个简单的例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">s=<span class="string">'Duan Yixuan'</span></span><br><span class="line"></span><br><span class="line">x=len(s)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'The length of %s is %d'</span> %(s,x))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'The length of %s is %d' 这部分叫做：格式控制符</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">(s,x) 这部分叫做：转换说明符</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">% 字符，表示标记转换说明符的开始</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">输出如下：</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">The length of Duan Yixuan is 11</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<p>和C语言的区别在于，Python中格式控制符和转换说明符用%分隔，C语言中用逗号。</p>
+<p>接下来我们仔细探讨一下格式化输出</p>
+<h2 id="3-1-字符"><a href="#3-1-字符" class="headerlink" title="3.1 %字符"></a>3.1 %字符</h2><p>(1).%字符：标记转换说明符的开始。</p>
+<p>%字符的用法可参考上例，不再赘述。</p>
+<h2 id="3-2-最小字段宽度和精度"><a href="#3-2-最小字段宽度和精度" class="headerlink" title="3.2 最小字段宽度和精度"></a>3.2 最小字段宽度和精度</h2><p>最小字段宽度：转换后的字符串至少应该具有该值指定的宽度。如果是*（星号），则宽度会从值元组中读出。</p>
+<p>点(.)后跟精度值：如果需要输出实数，精度值表示出现在小数点后的位数。如果需要输出字符串，那么该数字就表示最大字段宽度。如果是*，那么精度将从元组中读出。</p>
+<p>可参考C语言的实现方式。</p>
+<p><strong>注：字段宽度中，小数点也占一位。</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">PI = <span class="number">3.141592653</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">'%10.3f'</span>%PI)  <span class="comment">#字段宽10，精度3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#     3.142</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#精度为3，所以只显示142，指定宽度为10，所以在左边需要补充5个空格，以达到10位的宽度</span></span><br><span class="line"></span><br><span class="line">PI=<span class="number">3.1415926</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">"PI=%.*f"</span>%(<span class="number">3</span>,PI))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#用*从后面的元组中读取字段宽度或精度,可以读取出来精度是3位</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#PI=3.142 </span></span><br><span class="line"></span><br><span class="line"><span class="comment">#没有指定宽度，所以不需要缩进</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(<span class="string">"PI=%*.3f"</span>%(<span class="number">10</span>,PI))   <span class="comment">#精度为3，总长为10.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># PI=     3.142</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#* 所处的位置不同，读取的内容也不同</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-3-转换标志"><a href="#3-3-转换标志" class="headerlink" title="3.3 转换标志"></a>3.3 转换标志</h2><p>转换标志：-表示左对齐；+表示在数值前要加上正负号；” “(空白字符)表示正数之前保留空格()；0表示转换值若位数不够则用0填充。</p>
+<p>具体的我们可以看一下例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">PI=<span class="number">3.1415926</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">'%-10.3f'</span> %PI)  <span class="comment">#左对齐，还是10个字符，但空格显示在右边。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#3.142</span></span><br><span class="line">PI=<span class="number">3.1415926</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">'%+f'</span> % PI)  <span class="comment">#显示正负号  #+3.141593</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 类型f的默认精度为6位小数。</span></span><br><span class="line">PI=<span class="number">3.1415926</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">'%010.3f'</span>%PI) <span class="comment">#字段宽度为10，精度为3，不足处用0填充空白</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#000003.142   0表示转换值若位数不够则用0填充</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-4-格式字符归纳"><a href="#3-4-格式字符归纳" class="headerlink" title="3.4 格式字符归纳"></a>3.4 格式字符归纳</h2><p>格式字符  说明                 格式字符   说明</p>
+<p>%s 字符串采用str()的显示         %x 十六进制整数</p>
+<p>%r 字符串(repr())的显示          %e 指数（基底写e）</p>
+<p>%c 单个字符                   %E  指数（基底写E）</p>
+<p>%b 二进制整数                  %f,%F   浮点数</p>
+<p>%d 十进制整数                  %g  指数(e)或浮点数(根据显示长度)</p>
+<p>%i 十进制整数                  %G 指数(E)或浮点数(根据显示长度)</p>
+<p>%o 八进制整数                   %% 字符%</p>
+<h1 id="四、换行与防止换行"><a href="#四、换行与防止换行" class="headerlink" title="四、换行与防止换行"></a>四、换行与防止换行</h1><p>在python中，输出函数总是默认换行，比如说：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">5</span>):</span><br><span class="line"></span><br><span class="line">    print(x)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">0</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">1</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">2</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">3</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">4</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<p>而显然，这种输出太占“空间”，我们可以进行如下改造：</p>
+<p>参考文本第一部分对end参数的描述：<em>end – 用来设定以什么结尾。默认值是换行符 \n，我们可以换成其他字符。</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">5</span>):</span><br><span class="line"></span><br><span class="line">    print(x, end=<span class="string">' '</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#0 1 2 3 4 </span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">5</span>):</span><br><span class="line"></span><br><span class="line">    print(x, end=<span class="string">','</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#0,1,2,3,4,</span></span><br></pre></td></tr></table></figure>
+
+<p>但如果，我们同时运行上面两段代码，结果会如下所示，可知：我们需要在两次输出间，实现换行。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">5</span>):</span><br><span class="line"></span><br><span class="line">    print(x, end=<span class="string">' '</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">5</span>):</span><br><span class="line"></span><br><span class="line">    print(x, end=<span class="string">','</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#0 1 2 3 4 0,1,2,3,4,</span></span><br></pre></td></tr></table></figure>
+
+<p>我们比较以下几种方式</p>
+<p><strong>方式一：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">5</span>):</span><br><span class="line"></span><br><span class="line">    print(x, end=<span class="string">' '</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'\n'</span>)  </span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">5</span>):</span><br><span class="line"></span><br><span class="line">    print(x, end=<span class="string">','</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">0 1 2 3 4 </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">0,1,2,3,4,</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<p>之所以出现上面这种情况，是因为print()本身就是默认换行的，再加上换行符，相当于换行两次。</p>
+<p><strong>方式二：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">5</span>):</span><br><span class="line"></span><br><span class="line">    print(x, end=<span class="string">' '</span>)</span><br><span class="line"></span><br><span class="line">print()  <span class="comment">#本身自带换行，完美输出</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">5</span>):</span><br><span class="line"></span><br><span class="line">    print(x, end=<span class="string">','</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">0 1 2 3 4 </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">0,1,2,3,4,</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/06/13/Python%E2%80%94%E2%80%94print()%E5%87%BD%E6%95%B0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2020/06/13/Python%E6%B3%A8%E9%87%8A/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Python注释
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/05/30/%E6%9C%80%E5%85%A8%E7%9A%84Markdown%E8%AF%AD%E6%B3%95%E6%B1%87%E6%80%BB%E5%9C%A8%E8%BF%99%E9%87%8C/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">最全的Markdown语法汇总在这里</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: '9KjOP8UIrxMNeout6rbPNABM-gzGzoHsz',
+        app_key: 'p8jYOMTugImVVUXFa52wB63J',
+        path: window.location.pathname,
+        notify: 'true',
+        verify: 'true',
+        avatar: 'mp',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+
+
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2020
+        广外编程社
+      </li>
+      <li>
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <span>
+  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
+  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
+</span>
+        
+      </li>
+      
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://v1.cnzz.com/z_stat.php?id=1278929797&amp;web_id=1278929797'></script>
+        
+      </li>
+    </ul>
+  </div>
+
+
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv" style='display:none'>
+                本站访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+</footer>
+
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("08/4/2020 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+      <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    <aside class="sidebar">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/logo.png" alt="广外编程社官网"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="https://gw-lazybones.github.io/2020/05/30/%EF%BC%88%E7%BD%AE%E9%A1%B6%EF%BC%89GZFLS%20LazyBones%20%E7%AE%80%E4%BB%8B" target="_blank" rel="noopener">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>就当交个团费吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+      strings: ['广外编程社官网', '提供Python，C++；hexo等资料', '提供Python，C++；hexo等资料'],
+      startDelay: 0,
+      typeSpeed: 200,
+      loop: true,
+      backSpeed: 100,
+      showCursor: true
+    });
+  } catch (err) {
+  }
+
+</script>
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    onClick: (e) => {
+      $('.toc-link').removeClass('is-active-link');
+      $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+      $(e.target.hash).scrollIntoView();
+      return false;
+    }
+  });
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/js/ayer.js"></script>
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true
+  }
+</script>
+
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="86"
+        src="//music.163.com/outchain/player?type=2&id=22707008&auto=1&height=66"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
+
+<!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/love.js"></script>
+
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='1.4' zIndex="-4" count="185" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+<!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+

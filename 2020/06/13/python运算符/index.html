@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="广外编程社" />
+   
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    python运算符 |  广外编程社官网
+  </title>
+  <meta name="generator" content="hexo-theme-yilia-plus">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="广外编程社官网" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-python运算符" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  python运算符
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/06/13/python%E8%BF%90%E7%AE%97%E7%AC%A6/" class="article-date">
+  <time datetime="2020-06-13T10:08:53.000Z" itemprop="datePublished">2020-06-13</time>
+</a>
+      
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">3k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">13分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <p> <a href="https://www.cnblogs.com/zhaomeng/p/10303150.html" target="_blank" rel="noopener">Python运算符及逻辑运算</a></p>
+<h2 id="基本运算符"><a href="#基本运算符" class="headerlink" title="基本运算符"></a>基本运算符</h2><p>运算符用于执行程序代码运算，会针对一个以上操作数项目来进行运算。例如：2+3,其操作数是2和3，而运算符则是“+”。在计算器语言中运算符大致可以分为5种类型：算术运算符、连接运算符、关系运算符、赋值运算符和逻辑运算符。运算符也是计算机里比较好理解的人类语言之一，只要稍微懂点数学的，都能看懂算数运算符。</p>
+<p>在Python中常见的运算符有： +、-、<em>、/、*</em>/&lt;、&gt;、!=、//、%、&amp;、|、^、~、&gt;&gt;、&lt;&lt;、&lt;=、&gt;=、==、not、and、or 。接下来一一介绍这些运算符的具体事例。</p>
+<h3 id="算数运算"><a href="#算数运算" class="headerlink" title="算数运算"></a>算数运算</h3><p>以下假设变量：a=10，b=20</p>
+<p><img src="https://images2017.cnblogs.com/blog/988316/201709/988316-20170918164114681-450791355.png" alt="img"></p>
+<h3 id="比较运算"><a href="#比较运算" class="headerlink" title="比较运算"></a>比较运算</h3><p>以下假设变量：a=10，b=20</p>
+<p><img src="https://images2017.cnblogs.com/blog/988316/201709/988316-20170918164140775-1955239387.png" alt="img"></p>
+<h3 id="赋值运算"><a href="#赋值运算" class="headerlink" title="赋值运算"></a>赋值运算</h3><p>以下假设变量：a=10，b=20</p>
+<p><a href="http://kuanghy.github.io/2016/05/26/python-connect（Python连接符+=、+、-=）" target="_blank" rel="noopener">http://kuanghy.github.io/2016/05/26/python-connect（Python连接符+=、+、-=）</a></p>
+<p><img src="https://images2017.cnblogs.com/blog/988316/201709/988316-20170918164210728-1331769834.png" alt="img"></p>
+<h3 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h3><p><img src="https://images2017.cnblogs.com/blog/988316/201709/988316-20170918164226540-2018438327.png" alt="img"></p>
+<p>针对逻辑运算的进一步研究：</p>
+<p>1、在没有()的情况下not 优先级高于 and，and优先级高于or，即优先级关系为( )&gt;not&gt;and&gt;or，同一优先级从左往右计算。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print&#96;&#96;(&#96;&#96;3&#96;&#96;&gt;&#96;&#96;4&#96; &#96;or&#96; &#96;4&#96;&#96;&lt;&#96;&#96;3&#96; &#96;and&#96; &#96;1&#96;&#96;&#x3D;&#96;&#96;&#x3D;&#96;&#96;1&#96;&#96;)&#96;&#96;print&#96;&#96;(&#96;&#96;1&#96; &#96;&lt; &#96;&#96;2&#96; &#96;and&#96; &#96;3&#96; &#96;&lt; &#96;&#96;4&#96; &#96;or&#96; &#96;1&#96;&#96;&gt;&#96;&#96;2&#96; &#96;)&#96;&#96;print&#96;&#96;(&#96;&#96;2&#96; &#96;&gt; &#96;&#96;1&#96; &#96;and&#96; &#96;3&#96; &#96;&lt; &#96;&#96;4&#96; &#96;or&#96; &#96;4&#96; &#96;&gt; &#96;&#96;5&#96; &#96;and&#96; &#96;2&#96; &#96;&lt; &#96;&#96;1&#96;&#96;)&#96;&#96;print&#96;&#96;(&#96;&#96;1&#96; &#96;&gt; &#96;&#96;2&#96; &#96;and&#96; &#96;3&#96; &#96;&lt; &#96;&#96;4&#96; &#96;or&#96; &#96;4&#96; &#96;&gt; &#96;&#96;5&#96; &#96;and&#96; &#96;2&#96; &#96;&gt; &#96;&#96;1&#96; &#96;or&#96; &#96;9&#96; &#96;&lt; &#96;&#96;8&#96;&#96;)&#96;&#96;print&#96;&#96;(&#96;&#96;1&#96; &#96;&gt; &#96;&#96;1&#96; &#96;and&#96; &#96;3&#96; &#96;&lt; &#96;&#96;4&#96; &#96;or&#96; &#96;4&#96; &#96;&gt; &#96;&#96;5&#96; &#96;and&#96; &#96;2&#96; &#96;&gt; &#96;&#96;1&#96; &#96;and&#96; &#96;9&#96; &#96;&gt; &#96;&#96;8&#96; &#96;or&#96; &#96;7&#96; &#96;&lt; &#96;&#96;6&#96;&#96;)&#96;&#96;print&#96;&#96;(&#96;&#96;not&#96; &#96;2&#96; &#96;&gt; &#96;&#96;1&#96; &#96;and&#96; &#96;3&#96; &#96;&lt; &#96;&#96;4&#96; &#96;or&#96; &#96;4&#96; &#96;&gt; &#96;&#96;5&#96; &#96;and&#96; &#96;2&#96; &#96;&gt; &#96;&#96;1&#96; &#96;and&#96; &#96;9&#96; &#96;&gt; &#96;&#96;8&#96; &#96;or&#96; &#96;7&#96; &#96;&lt; &#96;&#96;6&#96;&#96;)&#96; &#96;#输出&#96;&#96;False&#96;&#96;True&#96;&#96;True&#96;&#96;False&#96;&#96;False&#96;&#96;False</span><br></pre></td></tr></table></figure>
+
+<p>2 、 x or y , x为真，值就是x，x为假，值是y；x and y, x为真，值是y,x为假，值是x。</p>
+<p>非0转换为布尔值是True，0转换为布尔值是False</p>
+<p><img src="https://images2017.cnblogs.com/blog/988316/201709/988316-20170918155316712-501488538.png" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print&#96;&#96;(&#96;&#96;8&#96; &#96;or&#96; &#96;4&#96;&#96;)&#96;&#96;print&#96;&#96;(&#96;&#96;0&#96; &#96;and&#96; &#96;3&#96;&#96;)&#96;&#96;print&#96;&#96;(&#96;&#96;0&#96; &#96;or&#96; &#96;4&#96; &#96;and&#96; &#96;3&#96; &#96;or&#96; &#96;7&#96; &#96;or&#96; &#96;9&#96; &#96;and&#96; &#96;6&#96;&#96;)&#96; &#96;#输出&#96;&#96;8&#96;&#96;0&#96;&#96;3</span><br></pre></td></tr></table></figure>
+
+<h3 id="成员运算"><a href="#成员运算" class="headerlink" title="成员运算"></a>成员运算</h3><p>除了以上的一些运算符之外，Python还支持成员运算符，测试实例中包含了一系列的成员，包括字符串，列表或元组。</p>
+<p><img src="https://img2018.cnblogs.com/blog/988316/201810/988316-20181019153207737-1857017047.png" alt="img"></p>
+<p>判断子元素是否在原字符串（字典，列表，集合）中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print&#96;&#96;(&#96;&#96;&#39;喜欢&#39;&#96; &#96;in&#96; &#96;&#39;dkfljadklf喜欢hfjdkas&#39;&#96;&#96;)&#96;&#96;print&#96;&#96;(&#96;&#96;&#39;a&#39;&#96; &#96;in&#96; &#96;&#39;bcvd&#39;&#96;&#96;)&#96;&#96;print&#96;&#96;(&#96;&#96;&#39;y&#39;&#96; &#96;not&#96; &#96;in&#96; &#96;&#39;ofkjdslaf&#39;&#96;&#96;)&#96; &#96;#输出&#96;&#96;True&#96;&#96;False&#96;&#96;True</span><br></pre></td></tr></table></figure>
+
+<h3 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h3><p><img src="https://img2018.cnblogs.com/blog/1090817/201906/1090817-20190608001203013-829509705.png" alt="img"></p>
+<p>按位取反运算规则(按位取反再加1) 详解<a href="http://blog.csdn.net/wenxinwukui234/article/details/42119265" target="_blank" rel="noopener">http://blog.csdn.net/wenxinwukui234/article/details/42119265</a></p>
+<p><strong>运算符优先级</strong></p>
+<p>以下表格列出了从最高到最低优先级的所有运算符：</p>
+<p><img src="https://img2018.cnblogs.com/blog/1090817/201901/1090817-20190122142152681-1179381657.jpg" alt="img"></p>
+<h3 id="———————以下是些具体运算———————"><a href="#———————以下是些具体运算———————" class="headerlink" title="———————以下是些具体运算———————"></a>———————以下是些具体运算———————</h3><h3 id="python运算符基础实例"><a href="#python运算符基础实例" class="headerlink" title="python运算符基础实例"></a>python运算符基础实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br></pre></td><td class="code"><pre><span class="line"># coding&#x3D;utf-8</span><br><span class="line">#两个数字相加</span><br><span class="line">sumNumber&#x3D;1+2</span><br><span class="line">print(sumNumber)      #输出结果：3</span><br><span class="line"> </span><br><span class="line">#两个字符串相加</span><br><span class="line">sumString&#x3D;&quot;Nice work&quot;</span><br><span class="line">print(sumString)      #输出结果：Nice work</span><br><span class="line"> </span><br><span class="line">#两个数字相减</span><br><span class="line">subNumber&#x3D;2-1</span><br><span class="line">print(subNumber)      #输出结果：1</span><br><span class="line"> </span><br><span class="line">#两个数字相乘或者字符串重复</span><br><span class="line">multiplicationNumber&#x3D;2*3</span><br><span class="line">print(multiplicationNumber)      #输出结果：6</span><br><span class="line">multiplicationString&#x3D;&quot;hello&quot;*2</span><br><span class="line">print(multiplicationString)      #输出结果：hellohello</span><br><span class="line">#&#x2F;---关于*号重复字符串之前的博客已经介绍过了---&#x2F;</span><br><span class="line"> </span><br><span class="line">#两个数相除</span><br><span class="line">divisionNumber&#x3D;9&#x2F;2</span><br><span class="line">print(divisionNumber)      #输出结果：4</span><br><span class="line">divisionNumber&#x3D;9.0&#x2F;2</span><br><span class="line">print(divisionNumber)      #输出结果：4.5</span><br><span class="line">divisionNumber&#x3D;9&#x2F;2.0</span><br><span class="line">print(divisionNumber)      #输出结果：4.5</span><br><span class="line">#&#x2F;---除数或被除数中有任意一个是小数的话，商也会保留小数，反之取整---&#x2F;</span><br><span class="line"> </span><br><span class="line">#求幂运算</span><br><span class="line">powerNumber&#x3D;2**3 #相当于2的3次幂，就是2*2*2 关于幂运算大家应该在数学里都很熟悉了</span><br><span class="line">print powerNumber       #输出结果：8</span><br><span class="line"> </span><br><span class="line">#小于符号，返回值是bool值</span><br><span class="line">lessThan&#x3D;1&lt;2</span><br><span class="line">print(lessThan)        #输出结果：True</span><br><span class="line">lessThan&#x3D;1&lt;1</span><br><span class="line">print(lessThan)        #输出结果：False</span><br><span class="line"> </span><br><span class="line">#大于符号，返回值是bool值</span><br><span class="line">moreThan&#x3D;2&gt;1</span><br><span class="line">print(moreThan)        #输出结果：True</span><br><span class="line">moreThan&#x3D;2&gt;2</span><br><span class="line">print(moreThan)        #输出结果：False</span><br><span class="line"> </span><br><span class="line">#不等于符号 返回值是Bool值</span><br><span class="line">notEqual&#x3D;1!&#x3D;2</span><br><span class="line">print(notEqual)        #输出结果：True</span><br><span class="line">notEqual&#x3D;1!&#x3D;1</span><br><span class="line">print(notEqual)        #输出结果：False</span><br><span class="line"> </span><br><span class="line">#除法运算&#x2F;&#x2F; 返回商的整数部分，抛弃余数</span><br><span class="line">divisorNumber&#x3D;10&#x2F;&#x2F;3</span><br><span class="line">print(divisorNumber)        #输出结果：3</span><br><span class="line"> </span><br><span class="line">#除法运算% 返回商的余数部分，抛弃商</span><br><span class="line">divisorNumber&#x3D;10%3</span><br><span class="line">print(divisorNumber)        #输出结果：1</span><br><span class="line">divisorNumber&#x3D;10%1</span><br><span class="line">print(divisorNumber)        #输出结果：0 &#x2F;--没有余数则返回0--&#x2F;</span><br><span class="line">divisorNumberx&#x3D;10&#x2F;&#x2F;3         #divisorNumberx是商的整数部分</span><br><span class="line">divisorNumbery&#x3D;10%3         #divisorNumbery是余数</span><br><span class="line">divisorNumberz&#x3D;3*divisorNumberx+divisorNumbery    #divisorNumberz是除数乘以商的整数部分加上余数，得到的divisorNumberz的值就是被除数</span><br><span class="line">print(divisorNumberz)        #输出结果：10</span><br><span class="line"> </span><br><span class="line">#按位与运算&amp;， 按位与是指一个数字转化为二进制，然后这些二进制的数按位来进行与运算</span><br><span class="line">operationNumber&#x3D;7&amp;18</span><br><span class="line">print operationNumber        #输出结果：2</span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line">这个有点绕，稍微多说下，如果对二进制不是太熟的朋友，可以打开电脑自带的计算器，按住win+q,输入&quot;calculator&quot;。</span><br><span class="line">然后在打开的计算器设置成程序员模式， 就是View(查看)-&gt;&gt;programmer(程序员).</span><br><span class="line">然后我们将7转为二进制:111,自动补全8位：00000111，然后将18转为二进制补全8位后得到：00010010</span><br><span class="line">最后将   00000111</span><br><span class="line">跟       00010010 按位进行与运算，</span><br><span class="line">&#x2F;-</span><br><span class="line">对与运算不熟的朋友可以看看百度百科的介绍，还是很详细的。</span><br><span class="line">http:&#x2F;&#x2F;baike.baidu.com&#x2F;link?url&#x3D;lfGJREBvGCY5j7VdF2OO9n2mtIbSyNUD7lZyyY74QIetguL5lXIQUxY38Yr-p4z4WdUvHUKGjw9CDfagiun2Ea</span><br><span class="line">-&#x2F;</span><br><span class="line">得到结果：00000010</span><br><span class="line">我们都知道10二进制→十进制&#x3D;2，所以7跟18的按位与的结果是二进制10(十进制2)</span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line"> </span><br><span class="line">#按位或运算|， 按位或是指一个数字转化为二进制，然后这些二进制的数按位来进行或运算</span><br><span class="line">operationNumber&#x3D;7|18</span><br><span class="line">print operationNumber        #输出结果：23   #结题思路和按位与运算的一样，可以参考按位与运算</span><br><span class="line"> </span><br><span class="line">#按位异或</span><br><span class="line">operationNumber&#x3D;7^18</span><br><span class="line">print operationNumber        #输出结果：21   #结题思路和按位与运算的一样，可以参考按位与运算</span><br><span class="line"> </span><br><span class="line">#按位翻转 ~   按位翻转公式: ~x&#x3D; - (x+1)</span><br><span class="line">operationNumber&#x3D;~12  #~12&#x3D;- (12+1) &#x3D; -13</span><br><span class="line">print operationNumber        #输出结果：-13   #结题思路和按位与运算的一样，可以参考按位与运算</span><br><span class="line"> </span><br><span class="line">#左移&lt;&lt;</span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line">比如18左移就是将他的二进制形式00100100左移，得到00100100(36)。</span><br><span class="line">左移规律:左移一个单位相当于乘2，左移两个单位相当于乘以4，左移三个单位相当于乘以8，</span><br><span class="line">即:      左移n个单位相当于乘以2的n次幂</span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line">operationNumber&#x3D;12&lt;&lt;1</span><br><span class="line">print operationNumber        #输出结果：24</span><br><span class="line">operationNumber&#x3D;3&lt;&lt;3</span><br><span class="line">print operationNumber        #输出结果：24</span><br><span class="line"> </span><br><span class="line">#右移&gt;&gt;</span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line">理解左移以后，右移就很好理解了。</span><br><span class="line">右移是左移的逆运算，将对应的二进制数向右移动。</span><br><span class="line">右移规律:右移一个单位相当于除以2，右移两个单位相当于除以4，右移三个单位相当于除以8，</span><br><span class="line">即:      右移n个单位相当于除以2的n次幂</span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line">operationNumber&#x3D;12&gt;&gt;1</span><br><span class="line">print operationNumber        #输出结果：6</span><br><span class="line">operationNumber&#x3D;12&gt;&gt;2</span><br><span class="line">print operationNumber        #输出结果：3</span><br><span class="line"> </span><br><span class="line">#小于等于&lt;&#x3D; 比较运算，小于或等于返回一个bool值</span><br><span class="line">operationNumber&#x3D;3&lt;&#x3D;3</span><br><span class="line">print operationNumber        #输出结果：True</span><br><span class="line">operationNumber&#x3D;3&lt;&#x3D;2</span><br><span class="line">print operationNumber        #输出结果：False</span><br><span class="line"> </span><br><span class="line">#大于等于&gt;&#x3D; 比较运算，大于或等于返回一个bool值</span><br><span class="line">operationNumber&#x3D;2&gt;&#x3D;3</span><br><span class="line">print operationNumber        #输出结果：False</span><br><span class="line">operationNumber&#x3D;3&gt;&#x3D;2</span><br><span class="line">print operationNumber        #输出结果：True</span><br><span class="line"> </span><br><span class="line">#比较两个对象是否相等&#x3D;&#x3D;</span><br><span class="line">operationNumber&#x3D;3&#x3D;&#x3D;2</span><br><span class="line">print operationNumber        #输出结果：False</span><br><span class="line">operationString&#x3D;&quot;hi&quot;&#x3D;&#x3D;&quot;hi&quot;</span><br><span class="line">print operationString        #输出结果：True</span><br><span class="line"> </span><br><span class="line">#逻辑非 not</span><br><span class="line">operationx&#x3D;True</span><br><span class="line">operationy&#x3D;not operationx</span><br><span class="line">print operationy        #输出结果：False</span><br><span class="line">operationz&#x3D;False</span><br><span class="line">print not operationz        #输出结果：True</span><br><span class="line"> </span><br><span class="line">#逻辑与 and</span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line">True and True &#x3D; True</span><br><span class="line">True and False &#x3D; False</span><br><span class="line">False and True &#x3D; False</span><br><span class="line">False and False &#x3D; False</span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line">print True and True        #输出结果：True</span><br><span class="line"> </span><br><span class="line">#逻辑或 or</span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line">True or True &#x3D; True</span><br><span class="line">True or False &#x3D; True</span><br><span class="line">False or True &#x3D; True</span><br><span class="line">False or False &#x3D; False</span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line">print False or False        #输出结果：False</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在一个表达式中可能包含多个有不同运算符连接起来的、具有不同数据类型的数据对象；由于表达式有多种运算，不同的运算顺序可能得出不同结果甚至出现错误运算错误，因为当表达式中含多种运算时，必须按一定顺序进行结合，才能保证运算的合理性和结果的正确性、唯一性。</p>
+<p>优先级从上到下依次递减，最上面具有最高的优先级，逗号操作符具有最低的优先级。表达式的结合次序取决于表达式中各种运算符的优先级。优先级高的运算符先结合，优先级低的运算符后结合，同一行中的运算符的优先级相同。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"># coding&#x3D;utf-8</span><br><span class="line">#优先级的简单实例</span><br><span class="line">priorityNumber&#x3D;2+1*4</span><br><span class="line">print priorityNumber      #输出结果：6</span><br><span class="line"></span><br><span class="line">#优先级使用实例</span><br><span class="line">#以下优先级排名从高到低，在同一运算中，先执行优先级高的再执行低的，以此类推。</span><br><span class="line"></span><br><span class="line">#Top 1:函数调用、寻址、下标</span><br><span class="line"></span><br><span class="line">#Top 2:幂运算**</span><br><span class="line">priorityNumber&#x3D;2*2**3</span><br><span class="line">print priorityNumber      #输出结果：16</span><br><span class="line"></span><br><span class="line">#Top 3:翻转运算~</span><br><span class="line"></span><br><span class="line">#Top 4:正负号</span><br><span class="line">print 1+2*-3      #输出结果：-5</span><br><span class="line"></span><br><span class="line">#Top 5:*、&#x2F;、%</span><br><span class="line">print 2+1*2&#x2F;5      #输出结果：2</span><br><span class="line"></span><br><span class="line">#Top 6:+、-</span><br><span class="line">print 3&lt;&lt;2+1      #输出结果：24</span><br><span class="line"></span><br><span class="line">#Top 7:&lt;&lt;、&gt;&gt;</span><br><span class="line"></span><br><span class="line">#Top 8:按位&amp;、^、|</span><br><span class="line"></span><br><span class="line">#Top 9:比较运算符</span><br><span class="line">priority&#x3D;2*3+2&lt;&#x3D;2+1*7</span><br><span class="line">print priority      #输出结果：True</span><br><span class="line"></span><br><span class="line">#Top 10:逻辑的not and or</span><br><span class="line"></span><br><span class="line">#Top 11:lambda表达式</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#python优先级使用规律</span><br><span class="line">#1、一般情况下是左结合的</span><br><span class="line">#ps:在没有更高优先级运算符，即只有同级运算符时时从左到右结合</span><br><span class="line">print 1+2+3*5+5      #输出结果：23</span><br><span class="line"></span><br><span class="line">#2、出现赋值的时候一般是右结合</span><br><span class="line">#ps:在有赋值运算符时，是右结合，即先算出1+2的值以后再赋值给priority</span><br><span class="line">priority&#x3D;1+2</span><br><span class="line">print priority       #输出结果：23</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#python运算符优先级大招</span><br><span class="line">&#39;&#39;&#39;比如说有这个需求：</span><br><span class="line">        去商店买水，买3瓶水，每瓶5块，再买一个绿箭(假设绿箭3块)，总共多少钱？</span><br><span class="line">   这个简单的应用非常明显，需要先用乘法再用加法，如果这里你忘记了乘法和加法的优先级，可以这样：</span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line">print (3*5)+3       #输出结果：18</span><br><span class="line"></span><br><span class="line">#ps: 这只是一个简单的例子，只是为了告诉大家实际应用中实在不行咱就放大招。有备无患。</span><br></pre></td></tr></table></figure>
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/06/13/python%E8%BF%90%E7%AE%97%E7%AC%A6/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2020/06/13/python%E2%80%94if%E8%AF%AD%E5%8F%A5/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            python—if语句
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/06/13/python%E7%BC%A9%E8%BF%9B/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">python缩进</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: '9KjOP8UIrxMNeout6rbPNABM-gzGzoHsz',
+        app_key: 'p8jYOMTugImVVUXFa52wB63J',
+        path: window.location.pathname,
+        notify: 'true',
+        verify: 'true',
+        avatar: 'mp',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+
+
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2020
+        广外编程社
+      </li>
+      <li>
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <span>
+  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
+  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
+</span>
+        
+      </li>
+      
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://v1.cnzz.com/z_stat.php?id=1278929797&amp;web_id=1278929797'></script>
+        
+      </li>
+    </ul>
+  </div>
+
+
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv" style='display:none'>
+                本站访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+</footer>
+
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("08/4/2020 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+      <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    <aside class="sidebar">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/logo.png" alt="广外编程社官网"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="https://gw-lazybones.github.io/2020/05/30/%EF%BC%88%E7%BD%AE%E9%A1%B6%EF%BC%89GZFLS%20LazyBones%20%E7%AE%80%E4%BB%8B" target="_blank" rel="noopener">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>就当交个团费吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+      strings: ['广外编程社官网', '提供Python，C++；hexo等资料', '提供Python，C++；hexo等资料'],
+      startDelay: 0,
+      typeSpeed: 200,
+      loop: true,
+      backSpeed: 100,
+      showCursor: true
+    });
+  } catch (err) {
+  }
+
+</script>
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    onClick: (e) => {
+      $('.toc-link').removeClass('is-active-link');
+      $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+      $(e.target.hash).scrollIntoView();
+      return false;
+    }
+  });
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/js/ayer.js"></script>
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true
+  }
+</script>
+
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="86"
+        src="//music.163.com/outchain/player?type=2&id=22707008&auto=1&height=66"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
+
+<!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/love.js"></script>
+
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='1.4' zIndex="-4" count="185" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+<!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+
