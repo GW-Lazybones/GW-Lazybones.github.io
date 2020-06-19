@@ -30,9 +30,4 @@ jQuery(document).ready(function($) {
     setTimeout('delay()', 2000);
 });
 
-async function test() {
-  console.log('Hello')
-  await sleep(200)
-  console.log('world!')
-}
 
