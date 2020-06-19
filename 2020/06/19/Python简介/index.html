@@ -8,7 +8,7 @@
    
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    Python语法大纲(部分) |  广外编程社官网
+    Python简介 |  广外编程社官网
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -33,7 +33,7 @@
   <div id="app">
     <main class="content">
       <section class="outer">
-  <article id="post-Python语法大全（部分）" class="article article-type-post" itemscope
+  <article id="post-Python简介" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -41,7 +41,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Python语法大纲(部分)
+  Python简介
 </h1>
   
 
@@ -57,8 +57,8 @@
         </span>
 
 
-<a href="/2020/06/13/Python%E8%AF%AD%E6%B3%95%E5%A4%A7%E5%85%A8%EF%BC%88%E9%83%A8%E5%88%86%EF%BC%89/" class="article-date">
-  <time datetime="2020-06-13T10:41:15.000Z" itemprop="datePublished">2020-06-13</time>
+<a href="/2020/06/19/Python%E7%AE%80%E4%BB%8B/" class="article-date">
+  <time datetime="2020-06-19T10:00:54.000Z" itemprop="datePublished">2020-06-19</time>
 </a>
       
       
@@ -68,7 +68,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.3k字</span>
+            <span class="post-count">1k字</span>
         </span>
     </span>
 
@@ -77,7 +77,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">5分钟</span>
+            <span class="post-count">4分钟</span>
         </span>
     </span>
 </div>
@@ -102,181 +102,184 @@
       
 
       
-      <p>  <strong><em>本文章包含了Python一系列基本知识，其中包括：基本数据类型（整数，浮点数，复数，字符串）；分支语句；异常处理；函数；局部变量与全局变量；递归；组合数据类型（集合，元组，列表，字典）；文件基本操作</em></strong></p>
+      <p>编程语言有“高低”之分，而高级语言又有很多种，比如 <a href="http://c.biancheng.net/cplus/" target="_blank" rel="noopener">C++</a>、<a href="http://c.biancheng.net/java/" target="_blank" rel="noopener">Java</a>、<a href="http://c.biancheng.net/csharp/" target="_blank" rel="noopener">C#</a>、<a href="http://c.biancheng.net/php/" target="_blank" rel="noopener">PHP</a>、<a href="http://c.biancheng.net/js/" target="_blank" rel="noopener">JavaScript</a> 等，<a href="http://c.biancheng.net/python/" target="_blank" rel="noopener">Python</a> 也是其中之一。从本节开始，我们将正式开始学习 Python 这门高级编程语言，但是在此之前，我们有必要先讨论一下“Python 是什么”。</p>
+<p>Python 英文原意为“蟒蛇”，直到 1989 年荷兰人 Guido van Rossum （简称 Guido）发明了一种面向对象的解释型编程语言，并将其命名为 Python，才赋予了它表示一门编程语言的含义。</p>
+<p>我们将在《<a href="http://c.biancheng.net/view/4136.html" target="_blank" rel="noopener">编译型语言和解释型语言的区别</a>》一文中讲解什么是解释型语言。</p>
+<p><img src="http://c.biancheng.net/uploads/allimg/190619/2-1Z619131214237.gif" alt="Python 的标志（Logo）"><br>图 1 Python 的标志（Logo）</p>
+<p>说道 Python，它的诞生是极具戏曲性的，据 Guido 的自述记载，Python 语言是他在圣诞节期间为了打发时间开发出来的，之所以会选择 Python 作为该编程语言的名字，是因为他是一个叫 Monty Python 戏剧团体的忠实粉丝。</p>
+<p>Python 语言是在 ABC 教学语言的基础上发展来的；遗憾的是，ABC 语言虽然非常强大，但却没有普及应用，Guido 认为是它不开放导致的。</p>
+<p>基于这个考虑，Guido 在开发 Python 时，不仅为其添加了很多 ABC 没有的功能，还为其设计了各种丰富而强大的库，利用这些 Python 库，程序员可以把使用其它语言制作的各种模块（尤其是C语言和 C++）很轻松地联结在一起，因此 Python 又常被称为“胶水”语言。</p>
+<blockquote>
+<p>这里的库和模块，简单理解就是一个个的源文件，每个文件中都包含可实现各种功能的方法（也可称为函数）。</p>
+</blockquote>
+<p>从整体上看，Python 语言最大的特点就是简单，该特点主要体现在以下 2 个方面：</p>
 <ul>
-<li><strong><em>\</em>基本数据类型**</strong></li>
+<li>Python 语言的语法非常简洁明了，即便是非软件专业的初学者，也很容易上手。</li>
+<li>和其它编程语言相比，实现同一个功能，Python 语言的实现代码往往是最短的。</li>
 </ul>
-<p>一，数字类型及操作</p>
-<p>​    （1）整数类型</p>
-<p> 可正可负，无取值范围限制</p>
-<ol>
-<li><p>pow（x，y）：计算x^y</p>
-<p>（2）浮点数类型</p>
-</li>
-<li><p>存在不确定尾数</p>
-</li>
-<li><p>round(x,d)：对x四舍五入，d为小数截取位数</p>
-</li>
-<li><p><a>e/E<b>：a*10^b</p>
-<p>（3）复数类型</p>
-</li>
-<li><p>z=a+bj</p>
-</li>
-<li><p>z.real=a   z.imag=b</p>
-</li>
-</ol>
-<p>二，数值运算操作符</p>
-<p>eg：x//y :整数除 10//3=3 x%y :求模  10%3=1 x**y=x^y</p>
-<p>三,数值运算函数</p>
-<ol>
-<li>abs(x) :绝对值  abs(-10)=10</li>
-<li>divmod(x,y) :商余  divmod(10,3)=(3,1)</li>
-<li>pow(x,y,z) :幂余，（x**y）%z</li>
-<li>max(x1,x2,…xn) :求最大值 min(x1,x2,…xn) :求最小值</li>
-<li>int(x) ：将x变成整数 float(x) :将x变成浮点数</li>
-<li>comlex(x) :将x变成浮点数</li>
-</ol>
-<p>四，字符串类型的表示（由一对单引号或双引号表示的字符有序序列）</p>
-<ol>
-<li>&lt;字符串&gt;[M:N:K], 根据步长K对字符串进行切片</li>
-<li>特殊字符：”\b”:回退  “\n”:换行（光标移到下行首） “\r”:回车（光标移到本行首</li>
-</ol>
-<p>​           </p>
-<p>五，字符串处理函数</p>
-<ol>
-<li>len(x) :长度 str(x) :任意类型x所对应的字符串形式</li>
-<li>chr(x) :x为Unicode编码，返回其对应的字符 ord（x）：相反</li>
-</ol>
-<p>六，字符串处理方法</p>
-<ol>
-<li>str.lower/upper() :返回全部字符的小/大写      “ABc”.lower()=”abc”</li>
-<li>str.split(sep) :返回一个列表，由str根据sep被分割的部分组成       “A,B,C”.split(“,”)=[‘A’,’B’,’C’]</li>
-<li>str.count(sub) :返回子串sub在str出现的次数       “a apple a day”.count(a)=4</li>
-<li>str.replace(old,new) :将所有的old子串被替换为new       python”.replace(“n”,”.i”)=”pytho.i”</li>
-<li>str.center(width,char) :字符串根据宽度width居中       “python”.center(8,”=”)= ’=python=’ </li>
-<li>str.strip(chars) :从str中去掉其左侧和右侧chars列出的字符      “python”.strip(“pn”)=”ytho”</li>
-<li>str.join(iter) :在iter变量除最后元素外每个元素加一个str        “,”.join(“12345”)=”1,2,3,4,5”</li>
-</ol>
-<p>七，字符串类型的格式化</p>
-<p><img src="https://img-blog.csdn.net/20180803102657205?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzM1NjMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img">      <img src="https://img-blog.csdn.net/20180803102728945?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzM1NjMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
-<hr>
-<hr>
-<hr>
+<p>对于 Python，网络上流传着“人生苦短，我用 Python”的说法。</p>
+<p>因此，看似 Python 是“不经意间”开发出来的，但丝毫不比其它编程语言差。事实也是如此，自 1991 年 Python 第一个公开发行版问世后：</p>
 <ul>
-<li><strong>程序的控制结构</strong></li>
+<li>2004 年起 Python 的使用率呈线性增长，不断受到编程者的欢迎和喜爱；</li>
+<li>2010 年，Python 荣膺 TIOBE 2010 年度语言桂冠；</li>
+<li>2017 年，IEEE Spectrum 发布的 2017 年度编程语言排行榜中，Python 位居第 1 位。</li>
 </ul>
-<p>一，程序的分支结构</p>
-<p>​    （1）单分支结构：</p>
-<p>​       if（条件）：</p>
-<p>​          &lt;语句块&gt;</p>
-<p>​    （2）二分支结构：</p>
-<p>​          if（条件）：       紧凑形式：</p>
-<p>​            &lt;语句块1&gt;       &lt;表达式1&gt; if &lt;条件&gt; else &lt;表达式2&gt;</p>
-<p>​         else:</p>
-<p>​            &lt;语句块2&gt;</p>
-<p>​    （3）多分支结构：</p>
-<p>​      if（条件1）：</p>
-<p>​        &lt;语句块1&gt;</p>
-<p>​     elif（条件2）：</p>
-<p>​       &lt;语句块2&gt;</p>
-<p>​    ……</p>
-<p>​     else:</p>
-<p>​       &lt;语句块N&gt;</p>
-<p>二,程序的异常处理</p>
-<p>（1）异常处理的基本使用：</p>
-<p>   try：            </p>
-<p>&lt;语句块1&gt;</p>
-<p>   except:</p>
-<p> &lt;语句块2&gt;</p>
-<p>（2）异常处理的高级使用：</p>
-<p>   try:</p>
-<p>​    &lt;语句块1&gt;</p>
-<p>   except:</p>
-<p>​    &lt;语句块2&gt;</p>
-<p>   else:</p>
-<p>​    &lt;语句块3&gt;     #在不发生异常时执行</p>
-<p>   finally:</p>
-<p>.   &lt;语句块4&gt;     #一定执行</p>
-<p>三，程序的循环结构</p>
-<p>  （1）遍历循环：</p>
-<p>​    for &lt;循环变量&gt; in &lt;遍历结构&gt;:</p>
-<p>​      &lt;语句块&gt;</p>
-<p>（2）无限循环：</p>
-<p>​    while&lt;条件&gt;:</p>
-<p>​      &lt;语句块&gt;</p>
-<p>（3）循环控制保留字</p>
-<p>​    break：跳出并结束当前整个循环</p>
-<p>​    continue：结束当次循环</p>
-<hr>
-<hr>
-<hr>
-<ul>
-<li><strong>函数和代码复用</strong></li>
-</ul>
-<p>一，函数的定义和使用</p>
-<p>（1）函数的定义：</p>
-<p>​    a， 一般函数</p>
-<p>​     def&lt;函数名&gt;(参数（0个或多个）):</p>
-<p>​        &lt;函数体&gt;</p>
-<p>​        return &lt;返回值&gt;</p>
-<p>   b， lambda函数</p>
-<p>​    &lt;函数名&gt;=lambda&lt;参数&gt;:&lt;表达式&gt;</p>
-<p>（2）函数的返回值</p>
-<p>​    函数可以返回0个或多个结果</p>
-<p>（3）局部变量和全局变量</p>
-<p>   #1：局部变量和全局变量是不同变量。可重名；函数运算结束后，局部变量被释放；可通过global保留字在函数内使用全局变量</p>
-<p>  #2：局部变量为组合数据类型且未被创建，等于全局变量</p>
-<p>二，代码复用和函数递归</p>
-<p>（1）递归的定义：（数学归纳法的编程体现）</p>
-<p>​    链条：计算过程存在递归链条</p>
-<p>   基例：存在一个或多个不需要再次递归的基例</p>
-<p>（2）递归的实现</p>
-<p>   函数+分支语句</p>
-<hr>
-<hr>
-<hr>
-<ul>
-<li><strong>组合数据类型</strong></li>
-</ul>
-<p>一，集合类型及操作</p>
-<p>（1）集合类型的定义（多个 元素[唯一，不可更改] 的无序组合）</p>
-<p>​    集合用{}表示，元素间用，分隔</p>
-<p>​    建立集合类型用{}或set（）</p>
-<p>（2）集合操作符</p>
-<p><img src="https://img-blog.csdn.net/20180803111727885?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzM1NjMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
-<p>（3）集合处理方法</p>
-<p><img src="https://img-blog.csdn.net/20180803111937554?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzM1NjMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img">     <img src="https://img-blog.csdn.net/20180803112008637?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzM1NjMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
-<p>二，序列类型及操作</p>
-<p>（1）元组类型：</p>
-<p>  #1   元组是一种序列类型，一旦创建就不能修改</p>
-<p>  #2  使用（）或tuple（）创建，元素间用，分隔。可以使用或不使用()</p>
-<p>  #3  元组继承了序列的全部操作，因为不难修改，所以没有特殊操作</p>
-<p><img src="https://img-blog.csdn.net/20180803112940676?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzM1NjMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"> <img src="https://img-blog.csdn.net/2018080311295768?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzM1NjMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
-<p>（2）列表类型</p>
-<p>#1  列表是一种序列类型，创建后可以被修改</p>
-<p>#2  使用[ ]或list（）创建，元素间用，分隔。各元素类型可以不同</p>
-<p>#3  列表操作：</p>
-<p><img src="https://img-blog.csdn.net/20180803113609247?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzM1NjMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
-<p><img src="https://img-blog.csdn.net/20180803113627845?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzM1NjMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
-<p>（3）字典类型（映射的体现）</p>
-<p> #1  键值对的集合，键值对之间无序</p>
-<p> #2  采用{}和dict（）创建，键值对用：表示</p>
-<p> #3  字典操作：</p>
-<p><img src="https://img-blog.csdn.net/20180803211259243?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzM1NjMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img">    <img src="https://img-blog.csdn.net/20180803211313739?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzM1NjMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
-<hr>
-<hr>
-<hr>
-<ul>
-<li><strong>文件处理</strong></li>
-</ul>
-<p>一，文件的使用</p>
-<p>（1）文件的打开和关闭</p>
-<p><img src="https://img-blog.csdn.net/20180803114238106?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzM1NjMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img">      <img src="https://img-blog.csdn.net/20180803114322350?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzM1NjMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
-<p><img src="https://img-blog.csdn.net/20180803114414415?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzM1NjMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img">      <img src="https://img-blog.csdn.net/20180803114507512?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzM1NjMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
-<p>（2）文件内容的读取</p>
-<p><img src="https://img-blog.csdn.net/20180803115043494?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzM1NjMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img">   <img src="https://img-blog.csdn.net/20180803115059241?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzM1NjMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
-<p>（3）数据文件的写入</p>
-<p><img src="https://img-blog.csdn.net/2018080311535729?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzM1NjMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img">   <img src="https://img-blog.csdn.net/20180803115418582?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzM1NjMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
+<p>直至现在（2019 年 12 月份），根据 TIOBE 排行榜的显示，Python 也居于第 3 位，且有继续提升的态势（如表 2 所示）。</p>
+<table>
+<thead>
+<tr>
+<th>2019年12月</th>
+<th>2018年12月</th>
+<th>编程语言</th>
+<th>市场份额</th>
+<th>变化</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1</td>
+<td>Java</td>
+<td>17.253%</td>
+<td><img src="http://c.biancheng.net/uploads/allimg/191231/1-19123115132bI.png" alt="img"> +1.32%</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>C</td>
+<td>16.086%</td>
+<td><img src="http://c.biancheng.net/uploads/allimg/191231/1-19123115132bI.png" alt="img"> +1.80%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>Python</td>
+<td>10.308%</td>
+<td><img src="http://c.biancheng.net/uploads/allimg/191231/1-19123115132bI.png" alt="img"> +1.93%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>C++</td>
+<td>6.196%</td>
+<td><img src="http://c.biancheng.net/uploads/allimg/191231/1-191231151422608.png" alt="img"> -1.37%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+<td>C#</td>
+<td>4.801%</td>
+<td><img src="http://c.biancheng.net/uploads/allimg/191231/1-19123115132bI.png" alt="img"> +1.35%</td>
+</tr>
+<tr>
+<td>6</td>
+<td>5</td>
+<td>Visual Basic .NET</td>
+<td>4.743%</td>
+<td><img src="http://c.biancheng.net/uploads/allimg/191231/1-191231151422608.png" alt="img"> -2.38%</td>
+</tr>
+<tr>
+<td>7</td>
+<td>7</td>
+<td>JavaScript</td>
+<td>2.090%</td>
+<td><img src="http://c.biancheng.net/uploads/allimg/191231/1-191231151422608.png" alt="img"> -0.97%</td>
+</tr>
+<tr>
+<td>8</td>
+<td>8</td>
+<td>PHP</td>
+<td>2.048%</td>
+<td><img src="http://c.biancheng.net/uploads/allimg/191231/1-191231151422608.png" alt="img"> -0.39%</td>
+</tr>
+<tr>
+<td>9</td>
+<td>9</td>
+<td>SQL</td>
+<td>1.843%</td>
+<td><img src="http://c.biancheng.net/uploads/allimg/191231/1-191231151422608.png" alt="img"> -0.34%</td>
+</tr>
+<tr>
+<td>10</td>
+<td>14</td>
+<td>Swift</td>
+<td>1.490%</td>
+<td><img src="http://c.biancheng.net/uploads/allimg/191231/1-19123115132bI.png" alt="img"> +0.27%</td>
+</tr>
+<tr>
+<td>11</td>
+<td>17</td>
+<td>Ruby</td>
+<td>1.314%</td>
+<td><img src="http://c.biancheng.net/uploads/allimg/191231/1-19123115132bI.png" alt="img"> +0.21%</td>
+</tr>
+<tr>
+<td>12</td>
+<td>11</td>
+<td>Delphi/Object Pascal</td>
+<td>1.280%</td>
+<td><img src="http://c.biancheng.net/uploads/allimg/191231/1-191231151422608.png" alt="img"> -0.12%</td>
+</tr>
+<tr>
+<td>13</td>
+<td>10</td>
+<td>Objective-C</td>
+<td>1.204%</td>
+<td><img src="http://c.biancheng.net/uploads/allimg/191231/1-191231151422608.png" alt="img"> -0.27%</td>
+</tr>
+<tr>
+<td>14</td>
+<td>12</td>
+<td>Assembly language</td>
+<td>1.067%</td>
+<td><img src="http://c.biancheng.net/uploads/allimg/191231/1-191231151422608.png" alt="img"> -0.30%</td>
+</tr>
+<tr>
+<td>15</td>
+<td>15</td>
+<td>Go</td>
+<td>0.995%</td>
+<td><img src="http://c.biancheng.net/uploads/allimg/191231/1-191231151422608.png" alt="img"> -0.19%</td>
+</tr>
+<tr>
+<td>16</td>
+<td>16</td>
+<td>R</td>
+<td>0.995%</td>
+<td><img src="http://c.biancheng.net/uploads/allimg/191231/1-191231151422608.png" alt="img"> -0.12%</td>
+</tr>
+<tr>
+<td>17</td>
+<td>13</td>
+<td><a href="http://c.biancheng.net/matlab/" target="_blank" rel="noopener">MATLAB</a></td>
+<td>0.986%</td>
+<td><img src="http://c.biancheng.net/uploads/allimg/191231/1-191231151422608.png" alt="img"> -0.30%</td>
+</tr>
+<tr>
+<td>18</td>
+<td>25</td>
+<td>D</td>
+<td>0.930%</td>
+<td><img src="http://c.biancheng.net/uploads/allimg/191231/1-19123115132bI.png" alt="img"> +0.42%</td>
+</tr>
+<tr>
+<td>19</td>
+<td>19</td>
+<td>Visual Basic</td>
+<td>0.929%</td>
+<td><img src="http://c.biancheng.net/uploads/allimg/191231/1-191231151422608.png" alt="img"> -0.05%</td>
+</tr>
+<tr>
+<td>20</td>
+<td>18</td>
+<td>Perl</td>
+<td>0.899%</td>
+<td><img src="http://c.biancheng.net/uploads/allimg/191231/1-191231151422608.png" alt="img"> -0.11%</td>
+</tr>
+</tbody></table>
+<p>显然，Python 已经将 C++ 语言甩在了后边，直逼 C 语言和 Java，而且未来有可能超越它们，成为编程语言排行榜冠军。</p>
+<p>我们不妨再看一下 Python 历年来的市场份额变化曲线，Python 的未来大势可期。</p>
+<p><img src="http://c.biancheng.net/uploads/allimg/191231/1-191231152F1C4.gif" alt="Python历年来市场份额变化曲线"><br>图 2 Python 历年来市场份额变化曲线</p>
+<p>错过了 C/C++ 的 PC 时代，又错过了 Java 的互联网和智能手机时代，你还想错过 Python 的人工智能和<a href="http://c.biancheng.net/big_data/" target="_blank" rel="noopener">大数据</a>时代吗？Python 正位于软件产业的第四次风口之上，把握好风口，你就能飞起来。</p>
 
       
       <!-- reward -->
@@ -331,7 +334,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/06/13/Python%E8%AF%AD%E6%B3%95%E5%A4%A7%E5%85%A8%EF%BC%88%E9%83%A8%E5%88%86%EF%BC%89/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/06/19/Python%E7%AE%80%E4%BB%8B/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -349,19 +352,10 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/06/13/Python%E8%AF%AD%E6%B3%95%E5%A4%A7%E7%BA%B2/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            Python语法大全
-          
-        </div>
-      </a>
     
-    
-      <a href="/2020/06/13/Python-%E7%BB%83%E4%B9%A0100%E4%BE%8B/" class="article-nav-link">
+      <a href="/2020/06/13/Hexo%E4%BC%98%E5%8C%96/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Python 练习100例</div>
+        <div class="article-nav-title">Hexo优化</div>
       </a>
     
   </nav>
